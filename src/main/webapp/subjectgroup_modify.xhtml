@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>UC-003-01 主題群組subjectgroup</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="content">
+
+                <h:form prependId="false" class="form-horizontal">
+                    <div class="container">
+                        <h2>主題群組</h2>
+                        <hr />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="btn_add" iconAwesome="plus" icon-size="lg" value="" 
+                                          onclick="return false;" />  
+                            </div>
+                        </div>
+                        <br/>
+                        <div class="form-group">
+                            <label for="name" class="col-md-2 control-label">主題群組名稱</label>
+                            <div class="col-md-10">
+                                <input id="name" type="text" class="form-control"  
+                                       value="#{subjectGroupModify.name}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-md-2 control-label">主題群組描述</label>
+                            <div class="col-md-10">
+                                <input id="name" type="text" class="form-control"  
+                                       value="#{subjectGroupModify.description}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button iconAwesome="pencil" icon-size="lg" value="" 
+                                          onclick="return false;" />
+                                <![CDATA[&nbsp;]]>
+                                <b:button iconAwesome="remove" icon-size="lg" value="" 
+                                          onclick="return false;" />
+                                <![CDATA[&nbsp;]]>
+                                <b:button id="btn_cancel" value="取消" 
+                                          onclick="return false;" />
+                            </div>
+                        </div>
+                    </div>
+                </h:form>
+                <script>
+                    var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
+                    $('#btn_cancel').click(function () {
+                        $(location).attr('href', path + '/subjectgroup.xhtml');
+                    });
+                    $('#btn_add').click(function () {
+                        $(location).attr('href', path + '/subjectgroup_add.xhtml');
+                    });
+                </script>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>
+
