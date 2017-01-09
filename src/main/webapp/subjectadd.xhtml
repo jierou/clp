@@ -12,29 +12,132 @@
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="content">
+                <b:row >
+                    <b:column span="1">
+                        <h:outputText value="主題群組" />
+                    </b:column>
+                    <b:column span="4">
+                        <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
+                                         onselect="console.log('select');">
+                            <f:selectItem itemLabel="-請選擇-" itemValue="" />
+                            <f:selectItem itemLabel="群組一" itemValue="1" />
+                            <f:selectItem itemLabel="群組二" itemValue="2" />
+                            <f:selectItem itemLabel="群組三" itemValue="3" />
+                        </b:selectOneMenu>
+                    </b:column>
+                </b:row>
+                <b:row >
+                    <b:column span="1">
+                        <h:outputText value="主題名稱" />
+                    </b:column>
+                    <b:column span="4">
+                        <b:inputText placeholder="Type something here..." />
+                    </b:column>
+                </b:row>
+                <b:row >
+                    <b:column span="1">
+                        <h:outputText value="主題大綱" />
+                    </b:column>
+                    <b:column span="4">
+                        <b:inputText placeholder="Type something here..." />
+                    </b:column>
+                </b:row>
+                <b:row >
+                    <b:column span="1">
+                        <h:outputText value="影片" />
+                    </b:column>
+                    <b:column span="4">
+                        <h:form enctype="multipart/form-data">
+                            <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
+                            <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
+                        </h:form>
+                    </b:column>
+                </b:row>
+                <b:row >
+                    <b:column span="1">
+                        <!--                        <h:form>-->
+                        <h:outputText value="題型" />
+                    </b:column>
+                    <b:column span="1">
+                        <b:radiobutton value="#{radiobuttonBean}" itemLabel="選擇" itemValue="1" />
+                    </b:column>
+                    <b:column span="1">
+                        <b:radiobutton value="#{radiobuttonBean}" itemLabel="是非" itemValue="2" />
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column span="1">
+                    <h:outputText value="題目" />
+                    </b:column>
+                    <b:column span="5">
+                    <b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
+                    </b:column>
+                </b:row>
 
-                <h:outputText value="主題群組_____" />
-                <h:outputText value="主題名稱" />
-                <b:inputText placeholder="Type something here..." />
-                <h:outputText value="主題大綱" />
-                <b:inputText placeholder="Type something here..." />
-                <h:outputText value="影片" />
-                <h:form enctype="multipart/form-data">
-                    <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
-
-                    <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
-                </h:form>
+                <!--</h:form>-->
 
 
-                <p>題型</p>
-                <b:panelGrid size="xs" columns="2">
-                    <b:radiobutton value="#{radiobuttonBean}" itemLabel="選擇" itemValue="6" />
-                    <b:radiobutton value="#{radiobuttonBean}" itemLabel="是非" itemValue="7" />
-                </b:panelGrid>
+                <table>
+                    <tbody>
+                        <tr>
+                            <h:outputText value="答案" />
+                            <h:outputText value="選項" />
+                        </tr>
+                        <tr>
+                            <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="5"/></td>
+                            <td><b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
+                        </tr>
+                        <tr>
+                            <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="6"/></td>
+                            <td><b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
+                        </tr>
+                        <tr>
+                            <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="7"/></td>
+                            <td><b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
+                        </tr>
+                        <tr>
+                            <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="8"/></td>
+                            <td><b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
+                        </tr>
+                    </tbody>
+
+                </table>
+
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>答案</td>
+                            <td>選項</td>
+                        </tr>
+                        <tr>
+                            <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="9"/></td>
+                            <td><h:outputText value="是" /></td>
+                        </tr>
+                        <tr>
+                            <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="0"/></td>
+                            <td><h:outputText value="否" /></td>
+                        </tr>
+                    </tbody>
+                </table>
 
 
 
+                <p:dataTable var="car" value="#{dtBasicView.cars}">
+                    <p:column headerText="答案">
+                        <b:radiobutton value="#{radiobuttonBean}"  itemValue="11"/>
+                        <h:outputText value="是"/>
+                        <b:radiobutton value="#{radiobuttonBean}"  itemValue="12"/>
+                        <h:outputText value="否"/>
+                    </p:column>
 
+                    <p:column headerText="選項">
+                        <b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
+                        />
+                    </p:column>
+
+
+                </p:dataTable>
 
 
             </ui:define>
