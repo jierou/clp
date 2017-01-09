@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Bootsfaces</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="content">
+                <!--<b:container>-->
+                    <h1>Navbar Fixed Top</h1>
+                    <b:jumbotron>
+                        <h1>Navbar example</h1>
+                        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+                        <p>To see the difference between static and fixed top navbars, just scroll.</p>
+                        <p>
+                            <a class="btn btn-lg btn-primary" href="second.xhtml" role="button"><span>View Navbars Documentation </span><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                        </p>
+                    </b:jumbotron>
+                <!--</b:container>-->
+
+                <br/><br/>
+
+
+
+                <b:button value="Default" />
+                <b:button value="Primary" look="primary"/>
+                <b:button look="info" value="Info"/>
+                <b:button look="success" value="Success"/>
+                <b:button look="warning" value="Warning"/>
+                <b:button look="danger" value="Danger"/>
+                <b:button look="link" value="Link" />
+                <br/><br/>
+                <b:button icon-spin="true" iconAwesome="thumbs-down"
+                          value="Thumbs up or thumbs down?" onclick="return false;"
+                          look="info" title="spin='true'" />
+                <b:button icon-size="3x" iconAwesome="thumbs-up"
+                          value="even bigger thumbs up!" onclick="return false;"
+                          look="info" title="icon-size='3x'" />
+                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-pencil">
+                    <f:param name="testId" value="33" />
+                </b:button>
+                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-trash">
+                    <f:param name="testId" value="33" />
+                </b:button>
+
+                <br/><br/>
+
+
+
+
+                <b:container>
+
+                    <b:row>
+                        <b:column medium-screen="1"></b:column>
+                        <b:column medium-screen="4">
+                            <b:dateTimePicker
+                                label="inline form"
+                                render-label="true"
+                                show-date="true"
+                                show-time="false"/>
+                        </b:column>
+                        <b:column medium-screen="7"></b:column>
+
+                    </b:row>
+                </b:container>
+                <b:container>
+                    <b:dataTable value="#{carPool.carPool}"
+                                 var="car"
+                                 class="editableCarTable">
+                        <b:dataTableColumn value="#{car.brand}" />
+                        <b:dataTableColumn value="#{car.type}" />
+                        <b:dataTableColumn value="#{car.color}" />
+                        <b:dataTableColumn value="#{car.year}"  order="asc" />
+                        <b:dataTableColumn label="Price">
+                            <b:inputText value="#{car.price}" rendered="#{car.editable}" />
+                            <h:outputText value="#{car.price}" rendered="#{!car.editable}" />
+                        </b:dataTableColumn>
+                        <b:dataTableColumn>
+                            <b:commandButton value="edit" icon="edit" ajax="true" update="@(.editableCarTable)"
+                                             onclick="ajax:car.edit()" >
+                            </b:commandButton>
+                        </b:dataTableColumn>
+                    </b:dataTable>
+                </b:container>
+                <br/>
+
+                <b:panelGrid columns="3">
+                    <p:outputLabel for="@next" value="Enter a number between 1 and 10"/>
+                    <b:inputText value="0" onkeyup="ajax:imageGallery.validateNumber()" update="@previous @next"
+                                 id="oneToTenId"/>
+                    <b:message for="@previous"/>
+                </b:panelGrid>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

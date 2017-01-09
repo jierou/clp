@@ -1,0 +1,73 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 4, 2017, 4:42:52 PM
+    Author     : jessie
+*/
+
+/*.navbar-header{
+    background-color: #6495ed;
+}
+.container-fluid{
+    background-color: #6495ed;
+}
+
+.nav{
+    background-color: #6495ed;
+}*/
+
+*:focus {
+    outline: 0 !important;
+}
+
+
+.navbar-default{
+    background-image:linear-gradient(to bottom, #6495ed 5%, #6495ed 100%);
+}
+
+.navbar-default .navbar-brand{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > li > a{
+    color: #fff;
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a{
+    background-image: -webkit-linear-gradient(top, #6495ed 0%, #6495ed 90%);
+}
+
+.navbar-default .navbar-nav > .open > a, 
+.navbar-default .navbar-nav > .open > a:hover, 
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #6495ed;
+    color: #fff;
+}
+
+/*.navbar {display: none;}*/
+.btn > .caret,.dropup > .btn > .caret {
+    border-top-color: #fff !important;
+}
+.label {
+    border: 1px solid #000;
+}
+
+
+.ui-widget {
+    font-size: 15px;
+}
+
+/*.ui-widget-content{
+    border: 0px solid;
+}*/
+
+
+/*<hr id="j_idt87:j_idt100" class="ui-separator ui-state-default ui-corner-all">*/
+
+
+
+
+

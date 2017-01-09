@@ -1,0 +1,29 @@
+<ui:fragment xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+             xmlns="http://www.w3.org/1999/xhtml"
+             xmlns:b="http://bootsfaces.net/ui">
+
+
+    <b:navBar brand="網路教學系統" fixed="top" class="navbar-header">
+        <b:navbarLinks>
+            <b:navLink value="學生" href="#"></b:navLink>
+            <b:navLink value="老師" href="subjectgroup.xhtml"></b:navLink>
+            <b:navLink value="專員" href="#contact"></b:navLink>
+            <b:dropMenu value="Dropdown">
+                <b:navLink value="Action" href="#"></b:navLink>
+                <b:navLink value="Another action" href="#"></b:navLink>
+                <b:navLink value="Something else here" href="#"></b:navLink>
+                <b:navLink></b:navLink>
+                <b:navLink header="Nav header"></b:navLink>
+                <b:navLink value="Separated link" href="#"></b:navLink>
+                <b:navLink value="One more separated link" href="#"></b:navLink>
+            </b:dropMenu>
+        </b:navbarLinks>
+        <b:navbarLinks pull="right">
+            <b:navLink icon="glyphicon glyphicon-user" value="" outcome="navbar-fixed-top"></b:navLink>
+            <b:navLink icon="glyphicon glyphicon-home" value="" outcome="navbar" href="home.xhtml"></b:navLink>
+            <b:navLink icon="glyphicon glyphicon-log-out" value="" outcome="navbar-static-top"></b:navLink>    
+        </b:navbarLinks>
+    </b:navBar>
+    
+</ui:fragment>
+
