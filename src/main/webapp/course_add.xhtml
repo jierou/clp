@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>UC-004-01 課程安排</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="content">
+                <h2>課程</h2>
+                <hr />
+                <h:form prependId="false" class="form-horizontal">
+                    <div class="container">
+                        <div class="form-group">
+                            <label for="name" class="col-md-2 control-label">課程名稱</label>
+                            <div class="col-md-10">
+                                <input id="name" type="text" class="form-control"  
+                                       value="" placeholder="" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="description" class="col-md-2 control-label">課程描述</label>
+                            <div class="col-md-10">
+                                <input id="description" type="text" class="form-control"  
+                                       value="" placeholder=""  />
+                                <a href="http://www.w3schools.com">Visit W3Schools.com!</a>
+                            </div>
+                        </div>
+                        <div class="form-group" id="roleID">
+                            <label for="role" class="col-md-2 control-label">上課角色</label>
+                            <div class="col-md-10">
+                                <p:selectManyCheckbox id="role" value="#{checkboxRoleView.selectedCities2}" layout="responsive" columns="3">
+                                    <f:selectItems value="#{checkboxRoleView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
+                                </p:selectManyCheckbox>
+                            </div>
+                        </div>
+                        <div class="form-group" id="subjectsID">
+                            <label for="subject" class="col-md-2 control-label">上課主題</label>
+                            <div class="col-md-10">
+                                <p:selectManyCheckbox id="subject" value="#{checkboxSubjectView.selectedCities2}" layout="responsive" columns="3">
+                                    <f:selectItems value="#{checkboxSubjectView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
+                                </p:selectManyCheckbox>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="btn_cancel2" value="取消" 
+                                          onclick="return false;" />
+                                <![CDATA[&nbsp;]]>
+                                <b:button value="確定" 
+                                          onclick="return false;" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                </h:form>
+                <script>
+                    var subjectAll = $('#subjectsID input[type="checkbox"]');//ok
+                    
+                    //$('#testa').after('<a href="http://www.w3schools.com">Visit W3Schools.com!</a>');
+                    
+                   
+                    
+                </script>
+                
+            </ui:define>
+        </ui:composition>
+    </h:body>
+
+</html>
+
