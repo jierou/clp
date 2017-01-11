@@ -21,6 +21,17 @@ import net.bootsfaces.utils.FacesMessages;
 public class radiobuttonBean implements Serializable {
     private static final long serialVersionUID = 1L;
     private Map<String, String> bands = new HashMap<String, String>();
+    private Map<String, String> question = new HashMap<String, String>();
+
+    public Map<String, String> getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Map<String, String> question) {
+        this.question = question;
+    }
+    
+    
  
     public radiobuttonBean() {
         getBands().put("Arch Enemy", "melodic death metal");

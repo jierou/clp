@@ -23,6 +23,9 @@ and open the template in the editor.
     outline: 0 !important;
 }
 
+.body{
+    font-size: 16px;
+}
 
 .navbar-default{
     background-image:linear-gradient(to bottom, #6495ed 5%, #6495ed 100%);
@@ -60,6 +63,23 @@ and open the template in the editor.
     font-size: 15px;
 }
 
+.label{
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+
+div.hidden{
+    display: none;
+}
+
+table, th {
+    /*border: 1px solid black;*/
+    border-collapse: collapse;
+    text-align: center;
+}
+th, td {
+    padding: 15px;
+}
 /*.ui-widget-content{
     border: 0px solid;
 }*/

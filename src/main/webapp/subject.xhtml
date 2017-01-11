@@ -12,110 +12,88 @@
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="content">
+                <h:form prependId="false" class="form-horizontal">
+                    <div class="container">
+                        <h2>主題</h2>
+                        <hr />
+                        <div class="form-group">
+                            <div class="col-md-1"/>
+                            <div class="col-md-1 control-label">
+                                <a class="btn btn-lg" href="subject_add.xhtml" role="button">
+                                    <span><i class="glyphicon glyphicon-plus"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="groupname" class="col-md-2 control-label">主題群組</label>
+                            <div class="col-md-4">
+                                <input id="name" type="text" class="form-control" value="#{subject.groupname}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subjectname" class="col-md-2 control-label">主題</label>
+                            <div class="col-md-4">
+                                <input id="name" type="text" class="form-control" value="#{subject.subjectname}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2"></div>
+                            <div class="col-md-4">
+                                <b:commandButton  value="查詢" />
+                            </div>
+                        </div>
 
-                <b:container>
-                    <h:form>
-                        <h:outputText value="新增主題:"/>
-                        <p:commandButton value="Options" icon="ui-icon-extlink" actionListener="#{dfView.viewCarsCustomized}" />
+                        <h:form>
+
+                        </h:form>
+
+
+
+                        <b:dataTable >
+                            <b:dataTableColumn value="主題群組" />
+                            <b:dataTableColumn value="主題" />
+
+
+                            <b:dataTableColumn>
+                                <b:commandButton value="edit" icon="edit" ajax="true" update="@(.editableCarTable)"
+                                                 onclick="ajax:car.edit()" >
+                                </b:commandButton>
+                            </b:dataTableColumn>
+                        </b:dataTable>
+
+                        <b:container>
+                            <h:form>
+
+
+                                <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                                    <p:outputPanel id="carDetail" style="text-align:center;">
+                                        <p:panelGrid  columns="2" rendered="#{not empty dtTableStateView.selectedCar}" columnClasses="label,value">
+                                            <f:facet name="header">
+                                                <p:graphicImage name="demo/images/car/#{dtTableStateView.selectedCar.brand}-big.gif"/> 
+                                            </f:facet>
+
+                                            <h:outputText value="Id:" />
+                                            <h:outputText value="#{dtTableStateView.selectedCar.id}" />
+
+                                            <h:outputText value="Year" />
+                                            <h:outputText value="#{dtTableStateView.selectedCar.year}" />
+
+                                            <h:outputText value="Brand" />
+                                            <h:outputText value="#{dtTableStateView.selectedCar.brand}" />
+
+                                            <h:outputText value="Color:" />
+                                            <h:outputText value="#{dtTableStateView.selectedCar.color}" style="color:#{dtTableStateView.selectedCar.color}"/>
+                                        </p:panelGrid>
+                                    </p:outputPanel>
+                                </p:dialog>
+                            </h:form>
+                        </b:container>
 
 
 
 
-                        <a class="btn btn-lg btn-primary" href="subjectadd.xhtml" role="button"><span><i class="glyphicon glyphicon-plus"></i></span></a>
-                    </h:form>
-                </b:container>
-
-                <b:container>
-                    <h:form>
-                        <h:outputText value="主題群組:"/>
-                        <b:inputText placeholder="Type something here..." />
-                        <h:outputText value="主題:"/>
-                        <b:inputText placeholder="Type something here..." />
-                        <b:commandButton  value="查詢" />
-                    </h:form>
-                </b:container>
-                <b:container>
-                    <b:dataTable >
-                        <b:dataTableColumn value="主題群組" />
-                        <b:dataTableColumn value="主題" />
-
-
-                        <b:dataTableColumn>
-                            <b:commandButton value="edit" icon="edit" ajax="true" update="@(.editableCarTable)"
-                                             onclick="ajax:car.edit()" >
-                            </b:commandButton>
-                        </b:dataTableColumn>
-                    </b:dataTable>
-                </b:container>
-                <b:container>
-                    <h:form>
-                        <p:dataTable id="tableStateDT" var="car" value="#{dtTableStateView.cars}" widgetVar="carsTable" 
-                                     rows="10" paginator="true"
-                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                                     rowsPerPageTemplate="5,10,15"
-                                     selectionMode="single" selection="#{dtTableStateView.selectedCar}" rowKey="#{car.id}"
-                                     emptyMessage="No cars found with given criteria" filteredValue="#{dtTableStateView.filteredCars}">
-
-                            <f:facet name="header">
-                                <p:outputPanel>
-                                    <h:outputText value="Search all fields:" />
-                                    <p:inputText id="globalFilter" onkeyup="PF('carsTable').filter()" style="width:150px" placeholder="Enter keyword"/>
-                                </p:outputPanel>
-                            </f:facet>
-
-                            <p:ajax event="rowSelect" update="" oncomplete="PF('carDialog').show()" />
-
-                            <p:column headerText="Id" filterBy="#{car.id}" sortBy="#{car.id}" filterMatchMode="contains">
-                                <h:outputText value="#{car.id}" />
-                            </p:column>
-
-                            <p:column headerText="Year" filterBy="#{car.year}" sortBy="#{car.year}" filterMatchMode="startsWith">
-                                <h:outputText value="#{car.year}" />
-                            </p:column>
-
-                            <p:column headerText="Brand" filterBy="#{car.brand}" sortBy="#{car.brand}" filterMatchMode="exact">
-                                <f:facet name="filter">
-                                    <p:selectOneMenu onchange="PF('carsTable').filter()" style="width:100px;" >
-                                        <f:selectItem itemLabel="Select One" itemValue="#{null}" noSelectionOption="true" />
-                                        <f:selectItems value="#{dtTableStateView.brands}" />
-                                    </p:selectOneMenu>
-                                </f:facet>
-                                <h:outputText value="#{car.brand}" />
-                            </p:column>
-
-                            <p:column headerText="Color" filterBy="#{car.color}" sortBy="#{car.color}" filterMatchMode="in">
-                                <f:facet name="filter">
-                                    <p:selectCheckboxMenu label="Colors" onchange="PF('carsTable').filter()" style="width:80px;" panelStyle="width:125px" scrollHeight="150">
-                                        <f:selectItems value="#{dtTableStateView.colors}" />
-                                    </p:selectCheckboxMenu>
-                                </f:facet>
-                                <h:outputText value="#{car.color}" />
-                            </p:column>
-                        </p:dataTable>
-
-                        <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-                            <p:outputPanel id="carDetail" style="text-align:center;">
-                                <p:panelGrid  columns="2" rendered="#{not empty dtTableStateView.selectedCar}" columnClasses="label,value">
-                                    <f:facet name="header">
-                                        <p:graphicImage name="demo/images/car/#{dtTableStateView.selectedCar.brand}-big.gif"/> 
-                                    </f:facet>
-
-                                    <h:outputText value="Id:" />
-                                    <h:outputText value="#{dtTableStateView.selectedCar.id}" />
-
-                                    <h:outputText value="Year" />
-                                    <h:outputText value="#{dtTableStateView.selectedCar.year}" />
-
-                                    <h:outputText value="Brand" />
-                                    <h:outputText value="#{dtTableStateView.selectedCar.brand}" />
-
-                                    <h:outputText value="Color:" />
-                                    <h:outputText value="#{dtTableStateView.selectedCar.color}" style="color:#{dtTableStateView.selectedCar.color}"/>
-                                </p:panelGrid>
-                            </p:outputPanel>
-                        </p:dialog>
-                    </h:form>
-                </b:container>
+                    </div>
+                </h:form>   
             </ui:define>
         </ui:composition>
     </h:body>
