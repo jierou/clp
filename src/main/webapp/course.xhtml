@@ -17,23 +17,17 @@
                         <h2>課程</h2>
                         <hr />
                         <div class="form-group">
-                            <div class="col-md-1"/>
-                            <div class="col-md-1 control-label">
-                                <a class="btn btn-lg" href="courseadd.xhtml" role="button">
-                                    <span><i class="glyphicon glyphicon-plus"></i></span>
-                                </a>
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="course_btn_add" iconAwesome="plus" icon-size="lg" value="" 
+                                          onclick="return false;" />  
                             </div>
                         </div>
+                        <br/>
                         <div class="form-group">
                             <label for="name" class="col-md-2 control-label">課程名稱</label>
-                            <div class="col-md-4">
-                                <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
-                                                 onselect="console.log('select');">
-                                    <f:selectItem itemLabel="-請選擇-" itemValue="" />
-                                    <f:selectItem itemLabel="課程一" itemValue="1" />
-                                    <f:selectItem itemLabel="課程二" itemValue="2" />
-                                    <f:selectItem itemLabel="課程三" itemValue="3" />
-                                </b:selectOneMenu>
+                            <div class="col-md-10">
+                                <input id="name" type="text" class="form-control"  
+                                       value="#{course.name}" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -112,6 +106,13 @@
 
                     </div>
                 </h:form>
+                <script>
+                    var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
+                    
+                    $('#course_btn_add').click(function () {
+                        $(location).attr('href', path + '/course_add.xhtml');
+                    });
+                </script>
             </ui:define>
         </ui:composition>
     </h:body>
