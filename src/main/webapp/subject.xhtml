@@ -17,81 +17,71 @@
                         <h2>主題</h2>
                         <hr />
                         <div class="form-group">
-                            <div class="col-md-1"/>
-                            <div class="col-md-1 control-label">
-                                <a class="btn btn-lg" href="subject_add.xhtml" role="button">
-                                    <span><i class="glyphicon glyphicon-plus"></i></span>
-                                </a>
-                            </div>
+                            <div class="col-md-2"/>
+                            <a class="btn btn-lg" href="subject_add.xhtml" role="button">
+                                <span><i class="glyphicon glyphicon-plus"></i></span>
+                            </a>
                         </div>
                         <div class="form-group">
                             <label for="groupname" class="col-md-2 control-label">主題群組</label>
                             <div class="col-md-4">
-                                <input id="name" type="text" class="form-control" value="#{subject.groupname}" />
+                                <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
+                                                 onselect="console.log('select');">
+                                    <f:selectItem itemLabel="-請選擇-" itemValue="" />
+                                    <f:selectItem itemLabel="群組一" itemValue="1" />
+                                    <f:selectItem itemLabel="群組二" itemValue="2" />
+                                    <f:selectItem itemLabel="群組三" itemValue="3" />
+                                </b:selectOneMenu>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="subjectname" class="col-md-2 control-label">主題</label>
                             <div class="col-md-4">
-                                <input id="name" type="text" class="form-control" value="#{subject.subjectname}" />
+                                <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
+                                                 onselect="console.log('select');">
+                                    <f:selectItem itemLabel="-請選擇-" itemValue="" />
+                                    <f:selectItem itemLabel="主題一" itemValue="1" />
+                                    <f:selectItem itemLabel="主題二" itemValue="2" />
+                                    <f:selectItem itemLabel="主題三" itemValue="3" />
+                                </b:selectOneMenu>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-2"></div>
-                            <div class="col-md-4">
-                                <b:commandButton  value="查詢" />
+                            <b:commandButton  value="查詢" />
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-2"/>
+                            <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
+                                <span><i class="glyphicon glyphicon-pencil"></i></span>
+                            </a>
+                            <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
+                                <span><i class="glyphicon glyphicon-trash"></i></span>
+                            </a>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-1"/>
+                            <div class="col-md-10">
+                                <h:form>
+                                    <p:dataTable var="car" value="#{dtPaginatorView.cars}" rows="10"
+                                                 paginator="true"
+                                                 paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                                 rowsPerPageTemplate="5,10,15">
+                                        <p:column headerText="主題群組">
+                                            <h:outputText value="#{car.id}" />
+                                        </p:column>
+
+                                        <p:column headerText="主題">
+                                            <h:outputText value="#{car.year}" />
+                                        </p:column>
+
+                                        <p:column headerText="編輯">
+                                            <h:outputText value="#{car.brand}" />
+                                        </p:column>
+                                    </p:dataTable>
+                                </h:form>
                             </div>
                         </div>
-
-                        <h:form>
-
-                        </h:form>
-
-
-
-                        <b:dataTable >
-                            <b:dataTableColumn value="主題群組" />
-                            <b:dataTableColumn value="主題" />
-
-
-                            <b:dataTableColumn>
-                                <b:commandButton value="edit" icon="edit" ajax="true" update="@(.editableCarTable)"
-                                                 onclick="ajax:car.edit()" >
-                                </b:commandButton>
-                            </b:dataTableColumn>
-                        </b:dataTable>
-
-                        <b:container>
-                            <h:form>
-
-
-                                <p:dialog header="Car Info" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
-                                    <p:outputPanel id="carDetail" style="text-align:center;">
-                                        <p:panelGrid  columns="2" rendered="#{not empty dtTableStateView.selectedCar}" columnClasses="label,value">
-                                            <f:facet name="header">
-                                                <p:graphicImage name="demo/images/car/#{dtTableStateView.selectedCar.brand}-big.gif"/> 
-                                            </f:facet>
-
-                                            <h:outputText value="Id:" />
-                                            <h:outputText value="#{dtTableStateView.selectedCar.id}" />
-
-                                            <h:outputText value="Year" />
-                                            <h:outputText value="#{dtTableStateView.selectedCar.year}" />
-
-                                            <h:outputText value="Brand" />
-                                            <h:outputText value="#{dtTableStateView.selectedCar.brand}" />
-
-                                            <h:outputText value="Color:" />
-                                            <h:outputText value="#{dtTableStateView.selectedCar.color}" style="color:#{dtTableStateView.selectedCar.color}"/>
-                                        </p:panelGrid>
-                                    </p:outputPanel>
-                                </p:dialog>
-                            </h:form>
-                        </b:container>
-
-
-
-
                     </div>
                 </h:form>   
             </ui:define>
