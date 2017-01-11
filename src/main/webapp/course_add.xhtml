@@ -28,7 +28,6 @@
                             <div class="col-md-10">
                                 <input id="description" type="text" class="form-control"  
                                        value="" placeholder=""  />
-                                <a href="http://www.w3schools.com">Visit W3Schools.com!</a>
                             </div>
                         </div>
                         <div class="form-group" id="roleID">
@@ -45,6 +44,47 @@
                                 <p:selectManyCheckbox id="subject" value="#{checkboxSubjectView.selectedCities2}" layout="responsive" columns="3">
                                     <f:selectItems value="#{checkboxSubjectView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
                                 </p:selectManyCheckbox>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="choice" class="col-md-2 control-label">選擇題</label>
+                            <div class="col-md-10">
+                                <input id="choice" type="text" class="form-control"  
+                                       value="" placeholder=""  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="yn" class="col-md-2 control-label">是非題</label>
+                            <div class="col-md-10">
+                                <input id="yn" type="text" class="form-control"  
+                                       value="" placeholder=""  />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-md-2 control-label">合格百分比</label>
+                            <div class="col-md-10">
+                                <h:panelGrid columns="1" style="margin-bottom: 10px">
+                                    <p:inputText id="txt1" value="#{sliderView.number1}" />
+                                    <p:slider for="txt1" />
+                                </h:panelGrid>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-md-2 control-label">閱讀百分比</label>
+                            <div class="col-md-10">
+                                <h:panelGrid columns="1" style="margin-bottom: 10px">
+                                    <p:inputText id="txt2" value="#{sliderView.number2}" />
+                                    <p:slider for="txt2" />
+                                </h:panelGrid>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label  class="col-md-2 control-label">測驗百分比</label>
+                            <div class="col-md-10">
+                                <h:panelGrid columns="1" style="margin-bottom: 10px">
+                                    <p:inputText id="txt3" value="#{sliderView.number3}" />
+                                    <p:slider for="txt3" />
+                                </h:panelGrid>
                             </div>
                         </div>
                         <div class="form-group">
