@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>subject</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="content">
+                <h:form prependId="false" class="form-horizontal">
+                    <div class="container">
+                        <h2>新增課程</h2>
+                        <hr />
+                        <div class="form-group">
+                            <label for="course_name" class="col-md-2 control-label">課程名稱</label>
+                            <div class="col-md-4">
+                                <input id="name" type="text" class="form-control" value="#{course.coursename}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startdate" class="col-md-2 control-label">課程描述</label>
+                            <div class="col-md-4">
+                                <input id="description" type="text" class="form-control" value="#{course.description}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startdate" class="col-md-2 control-label">上課角色</label>
+                            <div class="col-md-4">
+                                <b:selectMultiMenu value="#{selectMultiMenuBean.brand}" id="brandID"
+                                                   ondropdownhide="console.log('hide brand');ajax:selectMultiMenuBean.updateBrandMessage()"
+                                                   update="selectMultiAjax" process="@this" 
+                                                   enableFiltering="true"
+                                                   enableCaseInsensitiveFiltering="true"
+                                                   filterPlaceholder="關鍵字搜尋"
+                                                   required="true" includeSelectAllOption="true">
+                                    <f:selectItem itemLabel="Fiat" itemValue="1" />
+                                    <f:selectItem itemLabel="Honda" itemValue="2" />
+                                    <f:selectItem itemLabel="Opel" itemValue="3" />
+                                </b:selectMultiMenu>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startdate" class="col-md-2 control-label">上課主題</label>
+                            <div class="col-md-4">
+                                <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
+                                                 onselect="console.log('select');">
+                                    <f:selectItem itemLabel="-請選擇-" itemValue="" />
+                                    <f:selectItem itemLabel="主題一" itemValue="1" />
+                                    <f:selectItem itemLabel="主題二" itemValue="2" />
+                                    <f:selectItem itemLabel="主題三" itemValue="3" />
+                                </b:selectOneMenu>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startdate" class="col-md-2 control-label">考題類型</label>
+                            <div class="col-md-4">
+                                <input id="description" type="text" class="form-control" value="#{course.description}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startdate" class="col-md-2 control-label">合格百分比</label>
+                            <div class="col-md-4">
+                                <input id="description" type="text" class="form-control" value="#{course.description}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startdate" class="col-md-2 control-label">測驗百分比</label>
+                            <div class="col-md-4">
+                                <input id="description" type="text" class="form-control" value="#{course.description}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="startdate" class="col-md-2 control-label">閱讀百分比</label>
+                            <div class="col-md-4">
+                                <input id="description" type="text" class="form-control" value="#{course.description}" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-1"/>
+                            <div class="col-md-4">
+                                <a class="btn btn-lg btn-primary" href="course.xhtml" role="button">
+                                    <span>新增</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+
+                        </div>
+                    </div>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

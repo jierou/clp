@@ -5,8 +5,14 @@
 
     <b:navBar brand="網路教學系統" fixed="top" class="navbar-header">
         <b:navbarLinks>
-            <b:navLink value="學生" href="#"></b:navLink>
-            <b:navLink value="老師" href="subjectgroup.xhtml"></b:navLink>
+            <b:dropMenu value="老師">
+                <b:navLink value="主題群組" href="subjectgroup.xhtml"></b:navLink>
+                <b:navLink value="主題" href="subject.xhtml"></b:navLink>
+            </b:dropMenu>
+            <b:dropMenu value="課程安排">
+                <b:navLink value="課程" href="course.xhtml"></b:navLink>
+                <b:navLink value="排程" href="schedule.xhtml"></b:navLink>
+            </b:dropMenu>
             <b:navLink value="專員" href="#contact"></b:navLink>
             <b:dropMenu value="Dropdown">
                 <b:navLink value="Action" href="#"></b:navLink>
