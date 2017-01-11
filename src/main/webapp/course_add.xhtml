@@ -7,7 +7,7 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
-        <title>UC-004-01 課程安排</title>
+        <title>TODO 上課角色http://www.primefaces.org/showcase/ui/data/tree/selection.xhtml</title>
     </h:head>
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
@@ -30,19 +30,17 @@
                                        value="" placeholder=""  />
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="btn_add" iconAwesome="plus" icon-size="lg" value="新增角色" 
+                                          onclick="return false;" />  
+                            </div>
+                        </div>
                         <div class="form-group" id="roleID">
-                            <label for="role" class="col-md-2 control-label">上課角色</label>
+                            <label for="role" class="col-md-2 control-label">上課角色Tree</label>
                             <div class="col-md-10">
                                 <p:selectManyCheckbox id="role" value="#{checkboxRoleView.selectedCities2}" layout="responsive" columns="3">
                                     <f:selectItems value="#{checkboxRoleView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
-                                </p:selectManyCheckbox>
-                            </div>
-                        </div>
-                        <div class="form-group" id="subjectsID">
-                            <label for="subject" class="col-md-2 control-label">上課主題</label>
-                            <div class="col-md-10">
-                                <p:selectManyCheckbox id="subject" value="#{checkboxSubjectView.selectedCities2}" layout="responsive" columns="3">
-                                    <f:selectItems value="#{checkboxSubjectView.cities}" var="city" itemLabel="#{city}" itemValue="#{city}" />
                                 </p:selectManyCheckbox>
                             </div>
                         </div>
