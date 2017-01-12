@@ -44,12 +44,12 @@
                                                  paginator="true"
                                                  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                                  rowsPerPageTemplate="5,10,15">
-                                        <p:column headerText="課程類別標題" colspan="3">
+                                        <p:column headerText="課程名稱" colspan="3">
                                             <h:link outcome="course_list_course" value="#{ac.name}">
                                                 <f:param name="categoryID" value="#{ac.id}"/>
                                             </h:link>
                                         </p:column>
-                                        <p:column headerText="副標題" colspan="10">
+                                        <p:column headerText="課程描述" colspan="10">
                                             <h:outputText value="#{ac.description}" />
                                         </p:column>
                                         <p:column width="17%">
