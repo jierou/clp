@@ -14,18 +14,12 @@
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
                     <div class="container">
-                        <h2>新增主題http://www.primefaces.org/showcase/ui/data/tree/selection.xhtml  Single</h2>
+                        <h2>新增主題</h2>
                         <hr />
                         <div class="form-group">
                             <label for="name" class="col-md-2 control-label">主題群組</label>
                             <div class="col-md-9">
-                                <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
-                                                 onselect="console.log('select');">
-                                    <f:selectItem itemLabel="-請選擇-" itemValue="" />
-                                    <f:selectItem itemLabel="群組一" itemValue="1" />
-                                    <f:selectItem itemLabel="群組二" itemValue="2" />
-                                    <f:selectItem itemLabel="群組三" itemValue="3" />
-                                </b:selectOneMenu>
+
                             </div>
                         </div>
                         <div class="form-group">
@@ -66,107 +60,7 @@
                                                         </div>
                                                     </div>
                                                 </form>-->
-                        <form id="question" name="question" method="post" action="">
-
-
-                            <div id="ques_add">
-                                <div class="form-group">
-                                    <label for="question" class="col-md-2 control-label">題型</label>
-                                    <div class="col-md-5">
-                                        <div class="btn-group" data-toggle="buttons" > 
-                                            <label class="btn btn-default">
-                                                <input id="btnselect" type="radio" value="btnselect"> 選擇</input>
-                                            </label> 
-                                            <label class="btn btn-default"> 
-                                                <input id="btntruefalse" type="radio" value="btntruefalse"> 是非</input>
-                                            </label>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                                <div id="selection">
-                                    <div class="form-group">
-                                        <label for="groupname" class="col-md-2 control-label">題目</label>
-                                        <div class="col-md-5">
-                                            <b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-2"/>
-                                        <div class="col-md-7">
-                                            <table style="border: 1px;">
-                                                <tbody>
-                                                    <tr>
-                                                        <th><h:outputText value="答案" /></th>
-                                                        <th><h:outputText value="選項" /></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="5"/></td>
-                                                        <td>
-                                                            <!--<label for="A" class="control-label">A</label>-->
-                                                            <b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="6"/></td>
-                                                        <td><b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="7"/></td>
-                                                        <td><b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="8"/></td>
-                                                        <td><b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="ftruefalse">
-                                    <div class="form-group">
-                                        <label for="groupname" class="col-md-2 control-label">題目</label>
-                                        <div class="col-md-5">
-                                            <b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-md-2"/>
-                                        <div class="col-md-6">
-                                            <table>
-                                                <tbody>
-                                                    <tr>
-                                                        <th>答案</th>
-                                                        <th>選項</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="9"/></td>
-                                                        <td><h:outputText value="是" /></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="0"/></td>
-                                                        <td><h:outputText value="否" /></td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-
-
-
-                        </form>
-                        <div class="form-group">
-                            <div class="col-md-2"/>
-                            <div class="col-md-9">
-                                <b:button id="addques" value="新增題目" onclick="addRow();"/>
-                            </div>
-                        </div>
-
-                    </div>
+                    </div>  
                     <div class="container">
                         <br/>
                         <div class="form-group">
@@ -179,59 +73,30 @@
                             </div>
                         </div>
                     </div>
+                    <div class="container">
+                        <br/>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <p:commandButton value="新增是非題" icon="ui-icon-plus" actionListener="#{dfRootView.openLevel1}" />
+                                <p:commandButton value="新增選擇題" icon="ui-icon-plus" actionListener="#{dfRootView}" />
+<!--                                <b:button id="btn_addtruefalse" value="新增是非" 
+                                          onclick="return false;" />
+                                <![CDATA[&nbsp;]]>
+                                <b:button id="btn_addselection" value="新增選擇" 
+                                          onclick="return false;" />-->
+                            </div>
+                        </div>
+                    </div>
                 </h:form>
+
                 <script>
-                    $(document).ready(function () {
-                        $('#selection').show();
-                        $('#ftruefalse').hide();
-                        $('input[type="radio"]').click(function () {
-                            if ($(this).attr("value") == "btnselect") {
-                                $('#ftruefalse').hide();
-                                $('#selection').show();
-
-                            }
-                            if ($(this).attr("value") == "btntruefalse") {
-
-                                $('#ftruefalse').show();
-                                $('#selection').hide();
-                            }
-                        });
+                    var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
+                    $('#btn_addtruefalse').click(function () {
+                        $(location).attr('href', path + '/subject_addQtf.xhtml');
                     });
-
-//                    function addRow() {
-//                        //取得屬於要應用新增列的區塊
-//                        var obj = document.getElementById('question');
-//                        //取得目前有多少欄位
-//                        var sIndex = obj.getElementsByTagName('div').length + 1;
-//                        //依照原表單格式,先建一個div
-//                        var div = document.createElement('div');
-//                        //再建立文字欄位,並指定相關屬性
-//                        var output = document.createElement('output');
-//                        output.type = 'label';
-//                        output.name = 'l' + sIndex;
-//                        output.id = 'ls' + sIndex;
-//                        
-//                        
-//                        
-//                        var input = document.createElement('input');
-//                        input.type = 'text';
-//                        input.name = 't' + sIndex;
-//                        input.id = 't' + sIndex;
-//                        //再建立按鈕,並指定相關屬性
-//                        var btn = document.createElement('input');
-//                        btn.type = 'button';
-//                        btn.value = '下一筆';
-//                        btn.onclick = function () {
-//                            addRow();
-//                        }
-//                        //把文字欄位和按鈕加到div中
-//                        div.appendChild(input);
-//                        div.appendChild(btn);
-//                        //把div加到區塊中
-//                        obj.appendChild(div);
-//                    }
-
-
+                    $('#btn_addselection').click(function () {
+                        $(location).attr('href', path + '/subject_addQselect.xhtml');
+                    });
                 </script>
             </ui:define>
         </ui:composition>

@@ -59,136 +59,37 @@
                                 <input type="hidden" name="mediaForm" value="mediaForm" />
                             </form>
                         </div>
+                    </div>
+                    <div class="container">
+                        <br/>
                         <div class="form-group">
-                            <div class="col-md-1"/>
-                            <div class="col-md-10">
-                                <p:dataTable var="car" value="#{dtBasicView.cars}">
-                                    <p:column headerText="題型">
-                                        <b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-
-                                    </p:column>
-                                    <p:column headerText="題目">
-                                        <b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-
-                                    </p:column>
-                                    <p:column headerText="答案">
-                                        <p:row>
-                                            <b:radiobutton value="#{radiobuttonBean}"  itemValue="11"/>
-                                            <h:outputText value="是"/>
-                                        </p:row>
-                                        <p:row>
-                                            <b:radiobutton value="#{radiobuttonBean}"  itemValue="12"/>
-                                            <h:outputText value="否"/>
-                                        </p:row>
-                                    </p:column>
-
-                                    <p:column headerText="選項">
-                                        <b:inputTextarea rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-
-                                    </p:column>
-                                </p:dataTable>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="question" class="col-md-2 control-label">題型</label>
-                            <div class="col-md-5">
-                                <div class="btn-group" data-toggle="buttons" > 
-                                    <label class="btn btn-default">
-                                        <input id="btnselect" type="radio" value="btnselect"> 選擇</input>
-                                    </label> 
-                                    <label class="btn btn-default"> 
-                                        <input id="btntruefalse" type="radio" value="btntruefalse"> 是非</input>
-                                    </label>
-                                </div>
-
-                            </div>
-                            <div class="col-md-4">
-                                <b:commandButton id="addques" value="新增"/>
-                            </div>
-                        </div>
-                        <div id="selection">
-                            <div class="form-group">
-                                <label for="groupname" class="col-md-2 control-label">題目</label>
-                                <div class="col-md-5">
-                                    <b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-2"/>
-                                <div class="col-md-7">
-                                    <table style="border: 1px;">
-                                        <tbody>
-                                            <tr>
-                                                <th><h:outputText value="答案" /></th>
-                                                <th><h:outputText value="選項" /></th>
-                                            </tr>
-                                            <tr>
-                                                <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="5"/></td>
-                                                <td>
-                                                    <!--<label for="A" class="control-label">A</label>-->
-                                                    <b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="6"/></td>
-                                                <td><b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
-                                            </tr>
-                                            <tr>
-                                                <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="7"/></td>
-                                                <td><b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
-                                            </tr>
-                                            <tr>
-                                                <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="8"/></td>
-                                                <td><b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div id="ftruefalse">
-                            <div class="form-group">
-                                <label for="groupname" class="col-md-2 control-label">題目</label>
-                                <div class="col-md-5">
-                                    <b:inputTextarea style="width: 450px;" rows="2" placeholder="Type something here..." value="#{barcodeBean.nonEmptyText}"/>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-2"/>
-                                <div class="col-md-6">
-                                    <table>
-                                        <tbody>
-                                            <tr>
-                                                <th>答案</th>
-                                                <th>選項</th>
-                                            </tr>
-                                            <tr>
-                                                <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="9"/></td>
-                                                <td><h:outputText value="是" /></td>
-                                            </tr>
-                                            <tr>
-                                                <td><b:radiobutton value="#{radiobuttonBean}"  itemValue="0"/></td>
-                                                <td><h:outputText value="否" /></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="btn_cancel2" value="取消" 
+                                          onclick="return false;" />
+                                <![CDATA[&nbsp;]]>
+                                <b:button value="確定" 
+                                          onclick="return false;" />
                             </div>
                         </div>
                     </div>
                     <div class="container">
                         <br/>
                         <div class="form-group">
-                            <div class="col-md-1"/>
-                            <div class="col-md-4">
-                                <a class="btn btn-lg btn-primary" href="subject.xhtml" role="button">
-                                    <span>新增</span>
-                                </a>
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="btn_returnsubject" value="回主題列表" 
+                                          onclick="return false;" />
+
                             </div>
                         </div>
                     </div>
                     <!--</div>-->
-                </h:form>   
+                </h:form> 
+                <script>
+                    var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
+                    $('#btn_returnsubject').click(function () {
+                        $(location).attr('href', path + '/subject.xhtml');
+                    });
+                </script>
             </ui:define>
         </ui:composition>
     </h:body>
