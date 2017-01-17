@@ -54,6 +54,9 @@ and open the template in the editor.
     font-size: 34px;
 }
 
+p {
+    margin: 0 0 0.5em;
+}
 
 /*.navbar-default .navbar-nav .open .dropdown-menu > li > a{
     color: #f2f2f2;

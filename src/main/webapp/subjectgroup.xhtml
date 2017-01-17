@@ -10,17 +10,19 @@
         <title>UC-003-01 主題群組subjectgroup</title>
     </h:head>
     <h:body>
-            <ui:composition template="WEB-INF/template/main.xhtml">
-            <ui:define name="content">
-                <h2>主題群組</h2>
+        <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="bar">
+                <h3>主題群組</h3>
                 <hr />
+            </ui:define>
+            <ui:define name="content">
                 <h:form prependId="false">
                     <b:button id="btn_add" iconAwesome="plus" icon-size="lg" value="主題群組" 
-                                          onclick="return false;" /> 
+                              onclick="return false;" /> 
                     <br/>
                     <input id="name" type="text" class="form-control"  
-                                       value="#{subjectGroupModify.name}"
-                                      placeholder="主題群組"/>
+                           value="#{subjectGroupModify.name}"
+                           placeholder="主題群組"/>
                     <br/>
                     <p:tieredMenu>
                         <p:submenu label="防災">

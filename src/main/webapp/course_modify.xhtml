@@ -11,14 +11,16 @@
     </h:head>
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
-            <ui:define name="content">
-                <h2>修改課程</h2>
+            <ui:define name="bar">
+                <h3>修改課程</h3>
                 <div  style="text-align: right">
                     <h:link id="backpage" outcome="course" value="回課程列表">
                         <f:param name="courseID" value="courseList"/>
                     </h:link>
                 </div>
                 <hr />
+            </ui:define>
+            <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
                     <div class="container">
                         <div class="form-group">
