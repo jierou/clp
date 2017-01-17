@@ -41,42 +41,29 @@
                                 <b:commandButton iconAwesome="search" icon-size="lg" value="查詢" />
                             </div>
                         </div>
-                        <!--                        <div class="form-group">
-                                                    <div class="col-md-2"/>
-                                                    <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
-                                                        <span><i class="glyphicon glyphicon-pencil"></i></span>
-                                                    </a>
-                                                    <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
-                                                        <span><i class="glyphicon glyphicon-trash"></i></span>
-                                                    </a>
-                                                </div>-->
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <b:button id="subject_btn_modify" iconAwesome="pencil" icon-size="lg" value="主題" 
-                                          onclick="return false;" />  
-                                <![CDATA[&nbsp;]]>
-                                <b:button id="course_btn_delete" iconAwesome="trash-o" icon-size="lg" value="主題" 
-                                          onclick="return false;" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-1"/>
+                            <div class="col-md-1"></div>
                             <div class="col-md-10">
                                 <h:form>
-                                    <p:dataTable var="car" value="#{dtPaginatorView.cars}" rows="10"
+                                    <p:dataTable id="tableID" value="#{subjectView.dataList}" var="ac" rows="10"
                                                  paginator="true"
                                                  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                                  rowsPerPageTemplate="5,10,15">
-                                        <p:column headerText="主題群組">
-                                            <h:outputText value="#{car.id}" />
+                                        <p:column headerText="課程名稱" colspan="10">
+                                            <h:outputText value="#{ac.subjectGroup}" />
                                         </p:column>
-
-                                        <p:column headerText="主題">
-                                            <h:outputText value="#{car.year}" />
+                                        <p:column headerText="課程描述" colspan="10">
+                                            <h:outputText value="#{ac.subject}" />
                                         </p:column>
-
-                                        <p:column headerText="編輯">
-                                            <h:outputText value="#{car.brand}" />
+                                        <p:column width="35%">
+                                            <b:button id="question_btn_modify" iconAwesome="pencil" icon-size="lg" value="題目" 
+                                                      onclick="return false;" /> 
+                                            <![CDATA[&nbsp;]]>
+                                            <b:button id="course_btn_modify" iconAwesome="pencil" icon-size="lg" value="主題" 
+                                                      onclick="return false;" />
+                                            <![CDATA[&nbsp;]]>
+                                            <b:button id="course_btn_delete" iconAwesome="trash-o" icon-size="lg" value="主題" 
+                                                      onclick="return false;" />
                                         </p:column>
                                     </p:dataTable>
                                 </h:form>
