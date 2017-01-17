@@ -50,6 +50,24 @@ and open the template in the editor.
     color: #fff;
 }
 
+.navbar-brand{
+    font-size: 34px;
+}
+
+
+/*.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+    color: #f2f2f2;
+}
+
+.dropdown-menu{
+    background-color: #6495ed;
+}
+
+.dropdown-header{
+    font-weight: bold;
+    color: #f2f2f2;
+}*/
+
 /*.navbar {display: none;}*/
 .btn > .caret,.dropup > .btn > .caret {
     border-top-color: #fff !important;
@@ -80,6 +98,11 @@ table, th {
 th, td {
     padding: 15px;
 }
+
+legend{
+    width: initial;
+}
+
 /*.ui-widget-content{
     border: 0px solid;
 }*/

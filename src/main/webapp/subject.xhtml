@@ -18,7 +18,7 @@
                         <hr />
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <b:button id="subject_btn_add" iconAwesome="plus" icon-size="lg" value="" 
+                                <b:button id="subject_btn_add" iconAwesome="plus" icon-size="lg" value="新增主題" 
                                           onclick="return false;" />  
                             </div>
                         </div>
@@ -37,18 +37,25 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-2"></div>
-                            <b:commandButton  value="查詢" />
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:commandButton iconAwesome="search" icon-size="lg" value="查詢" />
+                            </div>
                         </div>
-<!--                        <div class="form-group">
-                            <div class="col-md-2"/>
-                            <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
-                                <span><i class="glyphicon glyphicon-pencil"></i></span>
-                            </a>
-                            <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
-                                <span><i class="glyphicon glyphicon-trash"></i></span>
-                            </a>
-                        </div>-->
+                        <!--                        <div class="form-group">
+                                                    <div class="col-md-2"/>
+                                                    <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
+                                                        <span><i class="glyphicon glyphicon-pencil"></i></span>
+                                                    </a>
+                                                    <a class="btn btn-lg" href="subject_modify.xhtml" role="button">
+                                                        <span><i class="glyphicon glyphicon-trash"></i></span>
+                                                    </a>
+                                                </div>-->
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="subject_btn_modify" iconAwesome="pencil" icon-size="lg" value="修改主題" 
+                                          onclick="return false;" />  
+                            </div>
+                        </div>
                         <div class="form-group">
                             <div class="col-md-1"/>
                             <div class="col-md-10">
@@ -76,9 +83,11 @@
                 </h:form>
                 <script>
                     var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
-                    
                     $('#subject_btn_add').click(function () {
                         $(location).attr('href', path + '/subject_add.xhtml');
+                    });
+                    $('#subject_btn_modify').click(function () {
+                        $(location).attr('href', path + '/subject_modify.xhtml');
                     });
                 </script>
             </ui:define>
