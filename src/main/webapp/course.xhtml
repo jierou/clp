@@ -36,15 +36,6 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <b:button id="course_btn_modify" iconAwesome="pencil" icon-size="lg" value="課程" 
-                                          onclick="return false;" />
-                                <![CDATA[&nbsp;]]>
-                                <b:button id="course_btn_delete" iconAwesome="trash-o" icon-size="lg" value="課程" 
-                                          onclick="return false;" />
-                            </div>
-                        </div>
-                        <div class="form-group">
                             <div class="col-md-1"></div>
                             <div class="col-md-10">
                                 <h:form>
@@ -52,17 +43,21 @@
                                                  paginator="true"
                                                  paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                                                  rowsPerPageTemplate="5,10,15">
-                                        <p:column headerText="課程名稱" colspan="3">
-                                            <h:link outcome="course_list_course" value="#{ac.name}">
-                                                <f:param name="categoryID" value="#{ac.id}"/>
-                                            </h:link>
+                                        <p:column headerText="課程名稱" colspan="10">
+                                            <h:outputText value="#{ac.name}" />
                                         </p:column>
                                         <p:column headerText="課程描述" colspan="10">
                                             <h:outputText value="#{ac.description}" />
                                         </p:column>
-                                        <p:column width="17%">
-                                            <p:commandButton action="a" value="修改"></p:commandButton>
-                                            <p:commandButton actionListener="a" value="刪除" onclick="return confirm('確定刪除 ?')"  />
+                                        <p:column width="35%">
+                                            <b:button id="schedule_btn_modify" iconAwesome="pencil" icon-size="lg" value="排程" 
+                                            onclick="return false;" />
+                                            <![CDATA[&nbsp;]]>
+                                            <b:button id="course_btn_modify" iconAwesome="pencil" icon-size="lg" value="課程" 
+                                            onclick="return false;" />
+                                             <![CDATA[&nbsp;]]>
+                                            <b:button id="course_btn_delete" iconAwesome="trash-o" icon-size="lg" value="課程" 
+                                            onclick="return false;" />
                                         </p:column>
                                     </p:dataTable>
                                 </h:form>
