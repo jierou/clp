@@ -18,7 +18,7 @@
                         <hr />
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                <b:button id="course_btn_add" iconAwesome="plus" icon-size="lg" value="" 
+                                <b:button id="course_btn_add" iconAwesome="plus" icon-size="lg" value="課程" 
                                           onclick="return false;" />  
                             </div>
                         </div>
@@ -31,9 +31,17 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-2"></div>
-                            <div class="col-md-4">
-                                <b:commandButton  value="查詢" />
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:commandButton iconAwesome="search" icon-size="lg" value="查詢" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <b:button id="course_btn_modify" iconAwesome="pencil" icon-size="lg" value="課程" 
+                                          onclick="return false;" />
+                                <![CDATA[&nbsp;]]>
+                                <b:button id="course_btn_delete" iconAwesome="trash-o" icon-size="lg" value="課程" 
+                                          onclick="return false;" />
                             </div>
                         </div>
                         <div class="form-group">
@@ -67,6 +75,9 @@
                     
                     $('#course_btn_add').click(function () {
                         $(location).attr('href', path + '/course_add.xhtml');
+                    });
+                    $('#course_btn_modify').click(function () {
+                        $(location).attr('href', path + '/course_modify.xhtml');
                     });
                 </script>
             </ui:define>

@@ -19,7 +19,7 @@
                         <hr />
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
-                                 <b:button id="btn_add" iconAwesome="plus" icon-size="lg" value="主題群組" 
+                                <b:button id="btn_add" iconAwesome="plus" icon-size="lg" value="主題群組" 
                                           onclick="return false;" />  
                             </div>
                         </div>
@@ -38,17 +38,15 @@
                                        value="#{subjectGroupModify.description}" />
                             </div>
                         </div>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <b:button iconAwesome="pencil" icon-size="lg" value="確定修改" 
-                                          onclick="return false;" />
-                                <![CDATA[&nbsp;]]>
-                                <b:button iconAwesome="trash-o" icon-size="lg" value="確定刪除" 
-                                          onclick="return false;" />
-                                <![CDATA[&nbsp;]]>
-                                <b:button iconAwesome="remove" icon-size="lg" id="btn_cancel" value="取消" 
-                                          onclick="return false;" />
-                            </div>
+                        <div class="col-md-offset-2 col-md-10">
+                            <b:button iconAwesome="remove" icon-size="lg" id="btn_cancel" value="取消" 
+                                      onclick="return false;" />
+                            <![CDATA[&nbsp;]]>
+                            <b:button iconAwesome="check" icon-size="lg" value="修改" 
+                                      onclick="return false;" />
+                            <![CDATA[&nbsp;]]>
+                            <b:button iconAwesome="trash-o" icon-size="lg" value="刪除" 
+                                      onclick="return false;" />
                         </div>
                     </div>
                 </h:form>
