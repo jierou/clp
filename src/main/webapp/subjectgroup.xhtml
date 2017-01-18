@@ -17,59 +17,71 @@
             </ui:define>
             <ui:define name="content">
                 <h:form prependId="false">
-                    <b:button id="btn_add" iconAwesome="plus" icon-size="lg" value="主題群組" 
-                              onclick="return false;" /> 
-                    <br/>
-                    <input id="name" type="text" class="form-control"  
-                           value="#{subjectGroupModify.name}"
-                           placeholder="主題群組"/>
-                    <br/>
-                    <p:tieredMenu>
-                        <p:submenu label="防災">
-                            <p:submenu label="防災A">
-                                <p:submenu label="level_1" id="A_level_1">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <b:button id="btn_add" iconAwesome="plus" icon-size="lg" value="主題群組" 
+                                      onclick="return false;" /> 
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <input id="name" type="text" class="form-control"  
+                                   value="#{subjectGroupModify.name}"
+                                   placeholder="主題群組"/>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-11">
+                            <p:tieredMenu>
+                                <p:submenu label="防災">
+                                    <p:submenu label="防災A">
+                                        <p:submenu label="level_1" id="A_level_1">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                        <p:submenu label="level_2">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                    </p:submenu>
+                                    <p:submenu label="防災B">
+                                        <p:submenu label="level_1">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                        <p:submenu label="level_2">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                    </p:submenu>
                                 </p:submenu>
-                                <p:submenu label="level_2">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
+                                <p:submenu label="防盜">
+                                    <p:submenu label="防盜A">
+                                        <p:submenu label="level_1">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                        <p:submenu label="level_2">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                    </p:submenu>
+                                    <p:submenu label="防盜B">
+                                        <p:submenu label="level_1">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                        <p:submenu label="level_2">
+                                            <p:menuitem value="group_1"></p:menuitem>
+                                            <p:menuitem value="group_2"></p:menuitem>
+                                        </p:submenu>
+                                    </p:submenu>
                                 </p:submenu>
-                            </p:submenu>
-                            <p:submenu label="防災B">
-                                <p:submenu label="level_1">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
-                                </p:submenu>
-                                <p:submenu label="level_2">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
-                                </p:submenu>
-                            </p:submenu>
-                        </p:submenu>
-                        <p:submenu label="防盜">
-                            <p:submenu label="防盜A">
-                                <p:submenu label="level_1">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
-                                </p:submenu>
-                                <p:submenu label="level_2">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
-                                </p:submenu>
-                            </p:submenu>
-                            <p:submenu label="防盜B">
-                                <p:submenu label="level_1">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
-                                </p:submenu>
-                                <p:submenu label="level_2">
-                                    <p:menuitem value="group_1"></p:menuitem>
-                                    <p:menuitem value="group_2"></p:menuitem>
-                                </p:submenu>
-                            </p:submenu>
-                        </p:submenu>
-                    </p:tieredMenu>
+                            </p:tieredMenu>
+                        </div>
+
+                    </div>
                 </h:form>
                 <script>
                     $('#A_level_1').click(function () {
