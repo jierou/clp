@@ -20,7 +20,8 @@
                     <div class="form-group">
                         <label for="name" class="col-md-2 control-label">主題群組</label>
                         <div class="col-md-9">
-
+                            <input id="name" type="text" class="form-control"  
+                                   value="subjectGroupA" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -46,10 +47,6 @@
                             </h:form>
                         </div>
                     </div>
-                    
-
-
-
                     <div class="form-group">
                         <div class="col-md-2"/>
                         <script src="http://www.youtube.com/iframe_api"></script>
@@ -79,6 +76,7 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <b:commandButton value="是非題" look="primary" iconAwesome="plus" actionListener="#{dfRootView.openLevel1}" />
+                            <![CDATA[&nbsp;]]>
                             <b:commandButton value="選擇題" look="primary" iconAwesome="plus" actionListener="#{dfRootView}" />
                             <!--                                <b:button id="btn_addtruefalse" value="新增是非" 
                                                                       onclick="return false;" />
