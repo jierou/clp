@@ -27,7 +27,7 @@
                         <div class="col-md-4">
                             <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
                                              onselect="console.log('select');">
-                                <f:selectItem itemLabel="-請選擇-" itemValue="" />
+                                <f:selectItem itemLabel="群組A" itemValue="A" />
                                 <f:selectItem itemLabel="群組一" itemValue="1" />
                                 <f:selectItem itemLabel="群組二" itemValue="2" />
                                 <f:selectItem itemLabel="群組三" itemValue="3" />
@@ -50,10 +50,10 @@
                     </div>
                     <div class="form-group">
                         <label for="media" class="col-md-2 control-label">影片</label>
-                        <div class="col-md-9">
+                        <div class="col-md-8">
                             <h:form enctype="multipart/form-data">
-                                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
-                                <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
+                                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true" style=" top: 15px;"/>
+                                <b:commandButton value="上傳" look="primary" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
                             </h:form>
                         </div>
                     </div>
