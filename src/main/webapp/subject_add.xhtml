@@ -41,11 +41,15 @@
                         <label for="media" class="col-md-2 control-label">影片</label>
                         <div class="col-md-8">
                             <h:form enctype="multipart/form-data">
-                                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
-                                <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
+                                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true" style=" top: 15px;"/>
+                                <b:commandButton value="上傳" look="primary" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
                             </h:form>
                         </div>
                     </div>
+                    
+
+
+
                     <div class="form-group">
                         <div class="col-md-2"/>
                         <script src="http://www.youtube.com/iframe_api"></script>
@@ -65,17 +69,17 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-9">
                             <b:button id="btn_cancel2" value="取消" 
-                                      onclick="return false;" />
+                                      look="primary" onclick="return false;" />
                             <![CDATA[&nbsp;]]>
                             <b:button value="確定" 
-                                      onclick="return false;" />
+                                      look="primary" onclick="return false;" />
                         </div>
                     </div>
                     <br/>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
-                            <p:commandButton value="是非題" icon="ui-icon-plus" actionListener="#{dfRootView.openLevel1}" />
-                            <p:commandButton value="選擇題" icon="ui-icon-plus" actionListener="#{dfRootView}" />
+                            <b:commandButton value="是非題" look="primary" iconAwesome="plus" actionListener="#{dfRootView.openLevel1}" />
+                            <b:commandButton value="選擇題" look="primary" iconAwesome="plus" actionListener="#{dfRootView}" />
                             <!--                                <b:button id="btn_addtruefalse" value="新增是非" 
                                                                       onclick="return false;" />
                                                             <![CDATA[&nbsp;]]>
