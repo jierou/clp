@@ -23,8 +23,13 @@ and open the template in the editor.
     outline: 0 !important;
 }
 
+html{
+    font-family: Arial, Microsoft JhengHei;
+}
+
+
 .body{
-    font-size: 16px;
+    font-size: 17px;
 }
 
 .navbar-default{
@@ -54,6 +59,14 @@ and open the template in the editor.
     font-size: 34px;
 }
 
+p {
+    margin: 0 0 0.5em;
+}
+
+.btn {
+    padding: 5px 12px;
+    font-size: 15px;
+}
 
 /*.navbar-default .navbar-nav .open .dropdown-menu > li > a{
     color: #f2f2f2;
@@ -88,15 +101,6 @@ and open the template in the editor.
 
 div.hidden{
     display: none;
-}
-
-table, th {
-    /*border: 1px solid black;*/
-    border-collapse: collapse;
-    text-align: center;
-}
-th, td {
-    padding: 15px;
 }
 
 legend{

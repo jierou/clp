@@ -11,11 +11,13 @@
     </h:head>
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="bar">
+                <h3>排程</h3>
+                <hr />
+            </ui:define>
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
                     <div class="container">
-                        <h2>排程</h2>
-                        <hr />
                         <div class="form-group">
                             <div class="col-md-1"/>
                             <div class="col-md-1 control-label">

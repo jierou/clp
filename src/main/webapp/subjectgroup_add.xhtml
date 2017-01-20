@@ -11,27 +11,28 @@
     </h:head>
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
-            <ui:define name="content">
-                <h2>主題群組</h2>
+            <ui:define name="bar">
+                <h3>主題群組</h3>
                 <hr />
+            </ui:define>
+            <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
-                    <div class="container">
                         <div class="form-group">
                             <label for="name" class="col-md-2 control-label">主題群組名稱</label>
-                            <div class="col-md-10">
+                            <div class="col-md-9">
                                 <input id="name" type="text" class="form-control"  
                                        value="" placeholder="" />
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="description" class="col-md-2 control-label">主題群組描述</label>
-                            <div class="col-md-10">
+                            <div class="col-md-9">
                                 <input id="description" type="text" class="form-control"  
                                        value="" placeholder=""  />
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
+                            <div class="col-md-offset-2">
                                 <b:button iconAwesome="remove" icon-size="lg" id="btn_cancel" value="取消" 
                                           onclick="return false;" />
                                 <![CDATA[&nbsp;]]>
@@ -42,7 +43,6 @@
                                           onclick="return false;" />
                             </div>
                         </div>
-                    </div>
                 </h:form> 
                 <script>
                     var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));

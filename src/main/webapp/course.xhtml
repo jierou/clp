@@ -11,11 +11,13 @@
     </h:head>
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="bar">
+                <h3>課程</h3>
+                <hr />
+            </ui:define>
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
-                    <div class="container">
-                        <h2>課程</h2>
-                        <hr />
+                    <!--<div class="container">-->
                         <div class="form-group">
                             <div class="col-md-offset-2 col-md-10">
                                 <b:button id="course_btn_add" iconAwesome="plus" icon-size="lg" value="課程" 
@@ -25,7 +27,7 @@
                         <br/>
                         <div class="form-group">
                             <label for="name" class="col-md-2 control-label">課程名稱</label>
-                            <div class="col-md-10">
+                            <div class="col-md-9">
                                 <input id="name" type="text" class="form-control"  
                                        value="#{course.name}" />
                             </div>
@@ -63,7 +65,7 @@
                                 </h:form>
                             </div>
                         </div>      
-                    </div>
+                    <!--</div>-->
                 </h:form>
                 <script>
                     var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));

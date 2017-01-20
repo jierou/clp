@@ -11,80 +11,76 @@
     </h:head>
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
+            <ui:define name="bar">
+                <h3>新增主題</h3>
+                <hr />
+            </ui:define>
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
-                    <div class="container">
-                        <h2>新增主題</h2>
-                        <hr />
-                        <div class="form-group">
-                            <label for="name" class="col-md-2 control-label">主題群組</label>
-                            <div class="col-md-9">
+                    <div class="form-group">
+                        <label for="name" class="col-md-2 control-label">主題群組</label>
+                        <div class="col-md-9">
 
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="name" class="col-md-2 control-label">主題名稱</label>
-                            <div class="col-md-9">
-                                <input id="name" type="text" class="form-control"  
-                                       value="#{subjectAdd.name}" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="outline" class="col-md-2 control-label">主題大綱</label>
-                            <div class="col-md-9">
-                                <input id="name" type="text" class="form-control"  
-                                       value="#{subjectAdd.outline}" />
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="media" class="col-md-2 control-label">影片</label>
-                            <div class="col-md-8">
-                                <h:form enctype="multipart/form-data">
-                                    <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
-                                    <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
-                                </h:form>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-md-2"/>
-                            <script src="http://www.youtube.com/iframe_api"></script>
-                            <iframe id="player" src="http://www.youtube.com/embed/2x25dqGa1_w?enablejsapi=1&amp;start=0&amp;autoplay=0&amp;showinfo=0&amp;controls=1&amp;rel=0&amp;fs=1&amp;modestbranding=1" width="480" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                            <form id="mediaForm" name="mediaForm" method="post" action="/csp-manager/view/manager-server/media/modifyMedia.xhtml" enctype="application/x-www-form-urlencoded">
-                                <input type="hidden" name="mediaForm" value="mediaForm" />
-                            </form>
-                        </div>
-                        <!--                        <form id="form1" name="form1" method="post" action="">
-                                                    <div id="text_field">
-                                                        <div>
-                                                            <input type="text" name="t1" id="t1" /><input type="button" value="下一筆" onclick="addRow();" />
-                                                        </div>
-                                                    </div>
-                                                </form>-->
-                    </div>  
-                    <div class="container">
-                        <br/>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <b:button id="btn_cancel2" value="取消" 
-                                          onclick="return false;" />
-                                <![CDATA[&nbsp;]]>
-                                <b:button value="確定" 
-                                          onclick="return false;" />
-                            </div>
                         </div>
                     </div>
-                    <div class="container">
-                        <br/>
-                        <div class="form-group">
-                            <div class="col-md-offset-2 col-md-10">
-                                <p:commandButton value="是非題" icon="ui-icon-plus" actionListener="#{dfRootView.openLevel1}" />
-                                <p:commandButton value="選擇題" icon="ui-icon-plus" actionListener="#{dfRootView}" />
-<!--                                <b:button id="btn_addtruefalse" value="新增是非" 
-                                          onclick="return false;" />
-                                <![CDATA[&nbsp;]]>
-                                <b:button id="btn_addselection" value="新增選擇" 
-                                          onclick="return false;" />-->
-                            </div>
+                    <div class="form-group">
+                        <label for="name" class="col-md-2 control-label">主題名稱</label>
+                        <div class="col-md-9">
+                            <input id="name" type="text" class="form-control"  
+                                   value="#{subjectAdd.name}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="outline" class="col-md-2 control-label">主題大綱</label>
+                        <div class="col-md-9">
+                            <input id="name" type="text" class="form-control"  
+                                   value="#{subjectAdd.outline}" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="media" class="col-md-2 control-label">影片</label>
+                        <div class="col-md-8">
+                            <h:form enctype="multipart/form-data">
+                                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
+                                <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
+                            </h:form>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-2"/>
+                        <script src="http://www.youtube.com/iframe_api"></script>
+                        <iframe id="player" src="http://www.youtube.com/embed/2x25dqGa1_w?enablejsapi=1&amp;start=0&amp;autoplay=0&amp;showinfo=0&amp;controls=1&amp;rel=0&amp;fs=1&amp;modestbranding=1" width="480" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
+                        <form id="mediaForm" name="mediaForm" method="post" action="/csp-manager/view/manager-server/media/modifyMedia.xhtml" enctype="application/x-www-form-urlencoded">
+                            <input type="hidden" name="mediaForm" value="mediaForm" />
+                        </form>
+                    </div>
+                    <!--                        <form id="form1" name="form1" method="post" action="">
+                                                <div id="text_field">
+                                                    <div>
+                                                        <input type="text" name="t1" id="t1" /><input type="button" value="下一筆" onclick="addRow();" />
+                                                    </div>
+                                                </div>
+                                            </form>-->
+                    <br/>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-9">
+                            <b:button id="btn_cancel2" value="取消" 
+                                      onclick="return false;" />
+                            <![CDATA[&nbsp;]]>
+                            <b:button value="確定" 
+                                      onclick="return false;" />
+                        </div>
+                    </div>
+                    <br/>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <p:commandButton value="是非題" icon="ui-icon-plus" actionListener="#{dfRootView.openLevel1}" />
+                            <p:commandButton value="選擇題" icon="ui-icon-plus" actionListener="#{dfRootView}" />
+                            <!--                                <b:button id="btn_addtruefalse" value="新增是非" 
+                                                                      onclick="return false;" />
+                                                            <![CDATA[&nbsp;]]>
+                                                            <b:button id="btn_addselection" value="新增選擇" 
+                                                                      onclick="return false;" />-->
                         </div>
                     </div>
                 </h:form>
