@@ -13,6 +13,11 @@
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="bar">
                 <h3>修改課程</h3>
+                <div  style="text-align: right">
+                    <h:link id="backpage" outcome="course" style="font-size: 17px;" value="回課程列表">
+                        <f:param name="courseID" value="courseList"/>
+                    </h:link>
+                </div>
                 <hr />
             </ui:define>
             <ui:define name="content">
