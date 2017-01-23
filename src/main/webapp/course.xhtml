@@ -13,7 +13,6 @@
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="bar">
                 <h3>課程</h3>
-                <hr />
             </ui:define>
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
@@ -21,10 +20,9 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <b:button id="course_btn_add" iconAwesome="plus" value="課程" 
-                                      look="success" onclick="return false;" />  
+                                      look="primary" onclick="return false;" />  
                         </div>
                     </div>
-                    <br/>
                     <div class="form-group">
                         <label for="name" class="col-md-2 control-label">課程名稱</label>
                         <div class="col-md-9">
@@ -51,15 +49,18 @@
                                     <p:column headerText="課程描述" colspan="10">
                                         <h:outputText value="#{ac.description}" />
                                     </p:column>
-                                    <p:column width="40%">
+                                    <p:column width="48%">
                                         <b:button id="schedule_btn_modify" iconAwesome="pencil" value="排程" 
-                                                  look="warning" onclick="return false;" />
+                                                  look="primary" onclick="return false;" />
                                         <![CDATA[&nbsp;]]>
                                         <b:button id="course_btn_modify" iconAwesome="pencil" value="課程" 
-                                                  look="warning" onclick="return false;" />
+                                                  look="primary" onclick="return false;" />
+                                        <![CDATA[&nbsp;]]>
+                                        <b:button id="course_btn_copy" iconAwesome="copy" value="課程" 
+                                                  look="primary" onclick="return false;" />
                                         <![CDATA[&nbsp;]]>
                                         <b:button id="course_btn_delete" iconAwesome="trash-o" value="刪除" 
-                                                  look="danger" onclick="return false;" />
+                                                  look="primary" onclick="return false;" />
                                     </p:column>
                                 </p:dataTable>
                             </h:form>
@@ -76,6 +77,7 @@
                     $('#course_btn_modify').click(function () {
                         $(location).attr('href', path + '/course_modify.xhtml');
                     });
+                    
                 </script>
             </ui:define>
         </ui:composition>

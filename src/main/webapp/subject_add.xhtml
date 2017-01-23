@@ -13,7 +13,6 @@
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="bar">
                 <h3>新增主題</h3>
-                <hr />
             </ui:define>
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
@@ -39,56 +38,41 @@
                     </div>
                     <div class="form-group">
                         <label for="media" class="col-md-2 control-label">影片</label>
-                        <div class="col-md-8">
-                            <h:form enctype="multipart/form-data">
+                        <div class="col-md-9">
+                            <!--<h:form enctype="multipart/form-data">-->
                                 <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true" style=" top: 15px;"/>
                                 <b:commandButton value="上傳" look="primary" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
-                            </h:form>
+                            <!--</h:form>-->
                         </div>
                     </div>
-                    
-
-
-
                     <div class="form-group">
                         <div class="col-md-2"/>
+                        <div class="col-md-9">
                         <script src="http://www.youtube.com/iframe_api"></script>
                         <iframe id="player" src="http://www.youtube.com/embed/2x25dqGa1_w?enablejsapi=1&amp;start=0&amp;autoplay=0&amp;showinfo=0&amp;controls=1&amp;rel=0&amp;fs=1&amp;modestbranding=1" width="480" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                        <form id="mediaForm" name="mediaForm" method="post" action="/csp-manager/view/manager-server/media/modifyMedia.xhtml" enctype="application/x-www-form-urlencoded">
+                        <!--<form id="mediaForm" name="mediaForm" method="post" action="/csp-manager/view/manager-server/media/modifyMedia.xhtml" enctype="application/x-www-form-urlencoded">-->
                             <input type="hidden" name="mediaForm" value="mediaForm" />
-                        </form>
+                        <!--</form>-->
+                        </div>
                     </div>
-                    <!--                        <form id="form1" name="form1" method="post" action="">
-                                                <div id="text_field">
-                                                    <div>
-                                                        <input type="text" name="t1" id="t1" /><input type="button" value="下一筆" onclick="addRow();" />
-                                                    </div>
-                                                </div>
-                                            </form>-->
                     <br/>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-9">
-                            <b:button id="btn_cancel2" value="取消" 
+                            <b:button id="btn_cancel2" iconAwesome="close" value="取消" 
                                       look="primary" onclick="return false;" />
                             <![CDATA[&nbsp;]]>
-                            <b:button value="確定" 
+                            <b:button value="確定" iconAwesome="check"
                                       look="primary" onclick="return false;" />
                         </div>
                     </div>
-                    <br/>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-10">
                             <b:commandButton value="是非題" look="primary" iconAwesome="plus" actionListener="#{dfRootView.openLevel1}" />
+                            <![CDATA[&nbsp;]]>
                             <b:commandButton value="選擇題" look="primary" iconAwesome="plus" actionListener="#{dfRootView}" />
-                            <!--                                <b:button id="btn_addtruefalse" value="新增是非" 
-                                                                      onclick="return false;" />
-                                                            <![CDATA[&nbsp;]]>
-                                                            <b:button id="btn_addselection" value="新增選擇" 
-                                                                      onclick="return false;" />-->
                         </div>
                     </div>
                 </h:form>
-
                 <script>
                     var path = window.location.origin + window.location.pathname.substr(0, window.location.pathname.lastIndexOf('/'));
                     $('#btn_addtruefalse').click(function () {

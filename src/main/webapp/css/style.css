@@ -19,6 +19,7 @@ and open the template in the editor.
     background-color: #6495ed;
 }*/
 
+/* button 外框灰線 */ 
 *:focus {
     outline: 0 !important;
 }
@@ -26,7 +27,6 @@ and open the template in the editor.
 html{
     font-family: Arial, Microsoft JhengHei;
 }
-
 
 .body{
     font-size: 17px;
@@ -44,10 +44,11 @@ html{
     color: #fff;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a{
+/*.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a{
     background-image: -webkit-linear-gradient(top, #6495ed 0%, #6495ed 90%);
 }
 
+*/
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
@@ -82,18 +83,18 @@ p {
 }*/
 
 /*.navbar {display: none;}*/
-.btn > .caret,.dropup > .btn > .caret {
+/*.btn > .caret,.dropup > .btn > .caret {
     border-top-color: #fff !important;
-}
-.label {
-    border: 1px solid #000;
-}
+}*/
 
+
+/* link button style*/
 .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
 	border: 1px solid #a6c9e2;
 	color: #0099cc;
 }
 
+/*upload file button style*/
 .ui-button, button.ui-button.ui-state-default, .ui-button.ui-state-default {
     border: 1px solid #1f89ce;
     color: #fff;
@@ -109,17 +110,21 @@ p {
     font-size: 17px;
 }
 
-.label{
+/*.label{
     padding-top: 10px;
     padding-bottom: 5px;
-}
+    border: 1px solid #000;
+}*/
 
-div.hidden{
-    display: none;
-}
 
+/*fieldset title style*/
 legend{
     width: initial;
+}
+
+.alert {
+    border: none;
+    color: inherit; 
 }
 
 /*.ui-widget-content{
@@ -127,7 +132,6 @@ legend{
 }*/
 
 
-/*<hr id="j_idt87:j_idt100" class="ui-separator ui-state-default ui-corner-all">*/
 
 
 

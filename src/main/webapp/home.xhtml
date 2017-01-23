@@ -16,108 +16,106 @@
                 <hr />
             </ui:define>
             <ui:define name="content">
-                <h1>Navbar Fixed Top</h1>
-                <b:jumbotron>
-                    <h1>Navbar example</h1>
-                    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-                    <p>To see the difference between static and fixed top navbars, just scroll.</p>
-                    <p>
-                        <a class="btn btn-lg btn-primary" href="second.xhtml" role="button"><span>View Navbars Documentation </span><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
-                    </p>
-                </b:jumbotron>
+                <!--                <h1>Navbar Fixed Top</h1>
+                                <b:jumbotron>
+                                    <h1>Navbar example</h1>
+                                    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+                                    <p>To see the difference between static and fixed top navbars, just scroll.</p>
+                                    <p>
+                                        <a class="btn btn-lg btn-primary" href="second.xhtml" role="button"><span>View Navbars Documentation </span><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                                    </p>
+                                </b:jumbotron>
+                                <br/><br/>
+                                <b:button value="Default" />
+                                <b:button look="primary" value="Primary"/>
+                                <b:button look="info" value="Info"/>
+                                <b:button look="success" value="Success"/>
+                                <b:button look="warning" value="Warning"/>
+                                <b:button look="danger" value="Danger"/>-->
                 <br/><br/>
-                <b:button value="Default" />
-                <b:button look="primary" value="Primary"/>
-                <b:button look="info" value="Info"/>
-                <b:button look="success" value="Success"/>
-                <b:button look="warning" value="Warning"/>
-                <b:button look="danger" value="Danger"/>
-                <br/><br/>
-                <b:button iconAwesome="check" look="link" value="確定" />
-                <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="check" value="確定" 
-                          look="success" onclick="return false;" />
+                <b:button iconAwesome="check" look="primary" value="確定" />
                 <![CDATA[&nbsp;]]>
                 <b:button iconAwesome="close" value="取消" 
-                          look="warning" onclick="return false;" />
+                          look="primary" onclick="return false;" />
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="pencil" value="編輯" 
-                          look="info" onclick="return false;" />
+                <b:button iconAwesome="pencil" value="修改" 
+                          look="primary" onclick="return false;" />
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="trash" value="刪除" 
-                          look="danger" onclick="return false;" /> 
+                <b:button iconAwesome="trash-o" value="刪除" 
+                          look="primary" onclick="return false;" /> 
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="close" value="" 
+                <b:button iconAwesome="plus" look="primary" value="新增" 
                           onclick="return false;" />
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="close" icon-size="lg" value="" 
+                <b:button iconAwesome="search" look="primary" value="搜尋" 
                           onclick="return false;" />
-                <br/><br/>
-                <b:button icon-spin="true" iconAwesome="thumbs-down"
-                          value="Thumbs up or thumbs down?" onclick="return false;"
-                          look="info" title="spin='true'" />
-                <b:button icon-size="3x" iconAwesome="thumbs-up"
-                          value="even bigger thumbs up!" onclick="return false;"
-                          look="info" title="icon-size='3x'" />
-                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-pencil">
-                    <f:param name="testId" value="33" />
-                </b:button>
-                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-trash">
-                    <f:param name="testId" value="33" />
-                </b:button>
-                <br/><br/>
-                <b:row>
-                    <b:column medium-screen="1"></b:column>
-                    <b:column medium-screen="4">
-                        <b:dateTimePicker
-                            label="inline form"
-                            render-label="true"
-                            show-date="true"
-                            show-time="false"/>
-                    </b:column>
-                    <b:column medium-screen="7"></b:column>
-                </b:row>
-                <b:dataTable value="#{carPool.carPool}"
-                             var="car"
-                             class="editableCarTable">
-                    <b:dataTableColumn value="#{car.brand}" />
-                    <b:dataTableColumn value="#{car.type}" />
-                    <b:dataTableColumn value="#{car.color}" />
-                    <b:dataTableColumn value="#{car.year}"  order="asc" />
-                    <b:dataTableColumn label="Price">
-                        <b:inputText value="#{car.price}" rendered="#{car.editable}" />
-                        <h:outputText value="#{car.price}" rendered="#{!car.editable}" />
-                    </b:dataTableColumn>
-                    <b:dataTableColumn>
-                        <b:commandButton value="edit" icon="edit" ajax="true" update="@(.editableCarTable)"
-                                         onclick="ajax:car.edit()" >
-                        </b:commandButton>
-                    </b:dataTableColumn>
-                </b:dataTable>
-                <br/>
+                <![CDATA[&nbsp;]]>
+                <b:button iconAwesome="copy" look="primary" value="複製" 
+                          onclick="return false;" />
+                <![CDATA[&nbsp;]]>
+                <b:button iconAwesome="mouse-pointer" look="primary" value="選擇" 
+                          onclick="return false;" />
+                <![CDATA[&nbsp;]]>
+                <b:button iconAwesome="arrow-right" look="primary" value="移動至" 
+                          onclick="return false;" />
+                <!--                <br/><br/>
+                                <b:button icon-spin="true" iconAwesome="thumbs-down"
+                                          value="Thumbs up or thumbs down?" onclick="return false;"
+                                          look="info" title="spin='true'" />
+                                <b:button icon-size="3x" iconAwesome="thumbs-up"
+                                          value="even bigger thumbs up!" onclick="return false;"
+                                          look="info" title="icon-size='3x'" />
+                                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-pencil">
+                                    <f:param name="testId" value="33" />
+                                </b:button>
+                                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-trash">
+                                    <f:param name="testId" value="33" />
+                                </b:button>
+                                <br/><br/>
+                                <b:row>
+                                    <b:column medium-screen="1"></b:column>
+                                    <b:column medium-screen="4">
+                                        <b:dateTimePicker
+                                            label="inline form"
+                                            render-label="true"
+                                            show-date="true"
+                                            show-time="false"/>
+                                    </b:column>
+                                    <b:column medium-screen="7"></b:column>
+                                </b:row>-->
 
-                <b:panelGrid columns="3">
-                    <p:outputLabel for="@next" value="Enter a number between 1 and 10"/>
-                    <b:inputText value="0" onkeyup="ajax:imageGallery.validateNumber()" update="@previous @next"
-                                 id="oneToTenId"/>
-                    <b:message for="@previous"/>
-                </b:panelGrid>
-                <h:form>
-                    <p:fieldset legend="Toggleable" toggleable="true" toggleSpeed="500">
-                        <h:panelGrid columns="2" cellpadding="5" style="margin-top: 20px; margin-bottom: 20px;">
-                            <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                            <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream.
-                                          In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy,
-                                          killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows."></h:outputText>
-                        </h:panelGrid>
-                        <h:panelGrid columns="2" cellpadding="5"  style="margin-top: 20px; margin-bottom: 20px;">
-                            <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                            <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream.
-                                          In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy,
-                                          killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows."></h:outputText>
-                        </h:panelGrid>
-                    </p:fieldset>
-                </h:form>
+                <br/><br/><br/>
+
+                <!--                <b:panelGrid columns="3">
+                                    <p:outputLabel for="@next" value="Enter a number between 1 and 10"/>
+                                    <b:inputText value="0" onkeyup="ajax:imageGallery.validateNumber()" update="@previous @next"
+                                                 id="oneToTenId"/>
+                                    <b:message for="@previous"/>
+                                </b:panelGrid>-->
+
+                <b:alert severity="success"><strong>Well done!</strong> You successfully read this important alert message.</b:alert>
+                <b:alert severity="danger"><strong>Oh snap!</strong> Change a few things up and try submitting again. </b:alert>
+
+                <!--                <h:form>
+                                    <p:fieldset legend="選擇題" toggleable="true" toggleSpeed="500">
+                                        <h:panelGrid columns="3" cellpadding="5" style="margin-top: 20px; margin-bottom: 20px;">
+                                            <h:outputText value="1. 「緊急求救」在平面圖上為何種顏色的圖示？A紅色 B藍色 C灰色 D紫色"></h:outputText>
+                
+                                            <b:button iconAwesome="pencil" value="編輯" 
+                                                      look="primary" onclick="return false;" />
+                                            <b:button iconAwesome="trash" value="刪除" 
+                                                      look="primary" onclick="return false;" /> 
+                                        </h:panelGrid>
+                                        <h:panelGrid columns="3" cellpadding="5"  style="margin-top: 20px; margin-bottom: 20px;">
+                                            <h:outputText value="2. 「緊急求救」在平面圖上為何種顏色的圖示？A紅色 B藍色 C灰色 D紫色"></h:outputText>
+                                            <b:button iconAwesome="pencil" value="編輯" 
+                                                      look="primary" onclick="return false;" />
+                                            <b:button iconAwesome="trash" value="刪除" 
+                                                      look="primary" onclick="return false;" /> 
+                                        </h:panelGrid>
+                                    </p:fieldset>
+                                </h:form>-->
+
             </ui:define>
         </ui:composition>
     </h:body>

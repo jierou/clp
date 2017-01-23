@@ -24,14 +24,8 @@
                 <h:form prependId="false" class="form-horizontal">
                     <div class="form-group">
                         <label for="name" class="col-md-2 control-label">主題群組</label>
-                        <div class="col-md-4">
-                            <b:selectOneMenu value="#num;{selectOneMenuBean.brand}" onchange="console.log('change');"
-                                             onselect="console.log('select');">
-                                <f:selectItem itemLabel="-請選擇-" itemValue="" />
-                                <f:selectItem itemLabel="群組一" itemValue="1" />
-                                <f:selectItem itemLabel="群組二" itemValue="2" />
-                                <f:selectItem itemLabel="群組三" itemValue="3" />
-                            </b:selectOneMenu>
+                        <div class="col-md-9">
+                            
                         </div>
                     </div>
                     <div class="form-group">
@@ -51,27 +45,30 @@
                     <div class="form-group">
                         <label for="media" class="col-md-2 control-label">影片</label>
                         <div class="col-md-9">
-                            <h:form enctype="multipart/form-data">
-                                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true"/>
-                                <p:commandButton value="Submit" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
-                            </h:form>
+                            <!--<form enctype="multipart/form-data">-->
+                                <p:fileUpload value="#{fileUploadView.file}" mode="simple" skinSimple="true" style=" top: 15px;"/>
+                                <b:commandButton value="上傳" look="primary" ajax="false" actionListener="#{fileUploadView.upload}" disabled="true" />
+                            <!--</form>-->
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-md-2"/>
+                        <div class="col-md-9">
                         <script src="http://www.youtube.com/iframe_api"></script>
                         <iframe id="player" src="http://www.youtube.com/embed/2x25dqGa1_w?enablejsapi=1&amp;start=0&amp;autoplay=0&amp;showinfo=0&amp;controls=1&amp;rel=0&amp;fs=1&amp;modestbranding=1" width="480" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe>
-                        <form id="mediaForm" name="mediaForm" method="post" action="/csp-manager/view/manager-server/media/modifyMedia.xhtml" enctype="application/x-www-form-urlencoded">
+                        <!--<form id="mediaForm" name="mediaForm" method="post" action="/csp-manager/view/manager-server/media/modifyMedia.xhtml" enctype="application/x-www-form-urlencoded">-->
                             <input type="hidden" name="mediaForm" value="mediaForm" />
-                        </form>
+                        <!--</form>-->
+                        </div>
                     </div>
                     <br/>
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-9">
-                            <b:button id="btn_cancel2" value="取消" 
+                        <div class="col-md-2"/>
+                        <div class="col-md-9">
+                            <b:button id="btn_cancel2" iconAwesome="close" value="取消" look="primary"
                                       onclick="return false;" />
                             <![CDATA[&nbsp;]]>
-                            <b:button value="確定" 
+                            <b:button value="確定" iconAwesome="check" look="primary"
                                       onclick="return false;" />
                         </div>
                     </div>
