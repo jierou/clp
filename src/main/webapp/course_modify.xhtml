@@ -38,7 +38,7 @@
                     </div>
 
                     <div class="form-group" id="roleID">
-                        <label for="role" class="col-md-2 control-label">上課角色</label>
+                        <label for="role" class="col-md-2 control-label">上課對象</label>
                         <div class="col-md-3">
                             <b:selectMultiMenu value="#{selectMultiMenuBean.brand}" id="brandID"
                                                ondropdownhide="console.log('hide brand');ajax:selectMultiMenuBean.updateBrandMessage()"
@@ -54,39 +54,46 @@
                             </b:selectMultiMenu>
 
                         </div>
-                        <div class="col-md-6">
-                            <b:button id="btn_add"  look="primary" iconAwesome="plus" value="角色" 
-                                      onclick="return false;" />  
-                        </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-md-2 control-label">合格百分比</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control"  
-                                   value="" placeholder=""  />
+                         <div class="col-md-9">
+                            <input id="description" type="text" class="form-control"  
+                                   value="60" placeholder=""  />
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-md-2 control-label">閱讀百分比</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control"  
-                                   value="" placeholder=""  />
+                         <div class="col-md-9">
+                            <input id="description" type="text" class="form-control"  
+                                   value="70" placeholder=""  />
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-md-2 control-label">測驗百分比</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control"  
-                                   value="" placeholder=""  />
+                         <div class="col-md-9">
+                            <input id="description" type="text" class="form-control"  
+                                   value="65" placeholder=""  />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">起始日期</label>
+                         <div class="col-md-9">
+                            <input id="description" type="text" class="form-control"  
+                                   value="2017/01/01" placeholder=""  />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label  class="col-md-2 control-label">結束日期</label>
+                         <div class="col-md-9">
+                            <input id="description" type="text" class="form-control"  
+                                   value="2017/10/10" placeholder=""  />
                         </div>
                     </div>
                     <br/>
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-9">
                             <b:button value="主題" iconAwesome="pencil" 
-                                      look="primary" onclick="return false;" />
-                            <![CDATA[&nbsp;]]> 
-                            <b:button iconAwesome="plus" value="排程" 
                                       look="primary" onclick="return false;" />
                             <![CDATA[&nbsp;]]> 
                             <b:button id="btn_cancel2" iconAwesome="close" value="取消" 

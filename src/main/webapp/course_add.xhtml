@@ -13,6 +13,11 @@
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="bar">
                 <h3>新增課程</h3>
+                <div  style="text-align: right">
+                    <h:link id="backpage" outcome="course" style="font-size: 17px;" value="回課程列表">
+                        <f:param name="courseID" value="courseList"/>
+                    </h:link>
+                </div>
             </ui:define>
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
@@ -53,29 +58,25 @@
                                 <f:selectItem itemLabel="Role3" itemValue="3" />
                             </b:selectMultiMenu>
                         </div>
-                        <div class="col-md-6">
-                            <b:button id="btn_add" look="primary" iconAwesome="plus" value="角色" 
-                                      onclick="return false;" />  
-                        </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-md-2 control-label">合格百分比</label>
-                        <div class="col-md-9">
-                            <input type="text" class="form-control"  
+                       <div class="col-md-9">
+                            <input id="description" type="text" class="form-control"  
                                    value="" placeholder=""  />
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-md-2 control-label">閱讀百分比</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control"  
+                            <input id="description" type="text" class="form-control"  
                                    value="" placeholder=""  />
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-md-2 control-label">測驗百分比</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control"  
+                            <input id="description" type="text" class="form-control"  
                                    value="" placeholder=""  />
                         </div>
                     </div>
@@ -83,9 +84,6 @@
                     <div class="form-group">
                         <div class="col-md-offset-2 col-md-9">
                             <b:button value="選擇主題" iconAwesome="mouse-pointer" 
-                                      look="primary" onclick="return false;" />
-                            <![CDATA[&nbsp;]]> 
-                            <b:button iconAwesome="plus" value="排程" 
                                       look="primary" onclick="return false;" />
                             <![CDATA[&nbsp;]]> 
                             <b:button id="btn_cancel2" iconAwesome="close" value="取消" 
