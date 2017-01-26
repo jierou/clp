@@ -12,28 +12,26 @@
     <h:body>
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="bar">
-                <h3>課程</h3>
+                <h1>課程</h1>
             </ui:define>
             <ui:define name="content">
                 <h:form prependId="false" class="form-horizontal">
                     <!--<div class="container">-->
                     <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
+                        <div class="col-md-1 control-label" style="text-align:right;">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-5">
+                            <input id="name" type="text" class="form-control"  
+                                   value="#{course.name}" placeholder="課程名稱"/>
+                        </div>
+                        <div class="col-md-6">
                             <b:button id="course_btn_add" iconAwesome="plus" value="課程" 
                                       look="primary" onclick="return false;" />  
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="name" class="col-md-2 control-label">課程名稱</label>
-                        <div class="col-md-9">
-                            <input id="name" type="text" class="form-control"  
-                                   value="#{course.name}" />
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                            <b:commandButton look="primary" iconAwesome="search" value="查詢" />
-                        </div>
+                        
                     </div>
                     <div class="form-group">
                         <div class="col-md-1"></div>
@@ -50,10 +48,10 @@
                                         <h:outputText value="#{ac.description}" />
                                     </p:column>
                                     <p:column width="40%">
-                                        <b:button id="course_btn_modify" iconAwesome="pencil" value="課程" 
+                                        <b:button id="course_btn_modify" iconAwesome="pencil" value="修改" 
                                                   look="primary" onclick="return false;" />
                                         <![CDATA[&nbsp;]]>
-                                        <b:button id="course_btn_copy" iconAwesome="copy" value="課程" 
+                                        <b:button id="course_btn_copy" iconAwesome="copy" value="複製" 
                                                   look="primary" onclick="return false;" />
                                         <![CDATA[&nbsp;]]>
                                         <b:button id="course_btn_delete" iconAwesome="trash-o" value="刪除" 
