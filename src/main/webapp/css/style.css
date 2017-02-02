@@ -19,17 +19,89 @@ and open the template in the editor.
     background-color: #6495ed;
 }*/
 
+.five-percent {
+     width: 5%;
+}
+
+.eighty-percent {
+     width: 75%;
+}
+
+.twenty-percent {
+     width: 20%;
+}
+
+.top-alignment {
+     vertical-align: top;
+}
+
+.togglegrid{
+    margin-top: 20px; 
+    margin-bottom: 20px; 
+    width:100%; 
+    table-layout:fixed; 
+    word-wrap:break-word;
+}
+
+
+
+
+/*@import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);*/
+
+/* button 外框灰線 */ 
 *:focus {
     outline: 0 !important;
 }
 
 html{
-    font-family: Arial, Microsoft JhengHei;
+    
+    font-family: 'PT Sans', sans-serif , 'Noto Sans TC', sans-serif;
 }
-
 
 .body{
     font-size: 17px;
+}
+
+h1{
+    font-size: 34px;
+}
+
+h2{
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.returnlink{
+    text-align: right;
+}
+
+img {
+     height: auto;
+     max-width: 100%;
+}
+
+/*//Media Query ，也就是當寬度 < 768 px 時將載入下面這段 CSS :
+ @media only screen and (max-width: 768px) {
+     //CSS的內容
+
+ }
+
+// Media Query ，也就是當寬度 < 480 px 時將載入下面這段 CSS :
+ @media only screen and (max-width: 480px) {
+     //CSS的內容
+     ....
+}*/
+
+/*Media Query ，也就是當寬度 < 320 px 時將載入下面這段 CSS :*/
+ @media only screen and (max-width: 320px) {
+     
+}
+
+
+
+i {
+     height: auto;
+     max-width: 100%;
 }
 
 .navbar-default{
@@ -44,10 +116,11 @@ html{
     color: #fff;
 }
 
-.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a{
+/*.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .active > a{
     background-image: -webkit-linear-gradient(top, #6495ed 0%, #6495ed 90%);
 }
 
+*/
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
@@ -82,18 +155,18 @@ p {
 }*/
 
 /*.navbar {display: none;}*/
-.btn > .caret,.dropup > .btn > .caret {
+/*.btn > .caret,.dropup > .btn > .caret {
     border-top-color: #fff !important;
-}
-.label {
-    border: 1px solid #000;
-}
+}*/
 
+
+/* link button style*/
 .btn-link, .btn-link:hover, .btn-link:focus, .btn-link:active {
 	border: 1px solid #a6c9e2;
 	color: #0099cc;
 }
 
+/*upload file button style*/
 .ui-button, button.ui-button.ui-state-default, .ui-button.ui-state-default {
     border: 1px solid #1f89ce;
     color: #fff;
@@ -109,17 +182,21 @@ p {
     font-size: 17px;
 }
 
-.label{
+/*.label{
     padding-top: 10px;
     padding-bottom: 5px;
-}
+    border: 1px solid #000;
+}*/
 
-div.hidden{
-    display: none;
-}
 
+/*fieldset title style*/
 legend{
     width: initial;
+}
+
+.alert {
+    border: none;
+    color: inherit; 
 }
 
 /*.ui-widget-content{
@@ -127,7 +204,6 @@ legend{
 }*/
 
 
-/*<hr id="j_idt87:j_idt100" class="ui-separator ui-state-default ui-corner-all">*/
 
 
 

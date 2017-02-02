@@ -13,111 +13,347 @@
         <ui:composition template="WEB-INF/template/main.xhtml">
             <ui:define name="bar">
                 <h3></h3>
-                <hr />
             </ui:define>
             <ui:define name="content">
-                <h1>Navbar Fixed Top</h1>
-                <b:jumbotron>
-                    <h1>Navbar example</h1>
-                    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-                    <p>To see the difference between static and fixed top navbars, just scroll.</p>
-                    <p>
-                        <a class="btn btn-lg btn-primary" href="second.xhtml" role="button"><span>View Navbars Documentation </span><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
-                    </p>
-                </b:jumbotron>
+                <!--<h:form>-->
+                <p:panelGrid style="margin-top:20px">
+                </p:panelGrid>
+                <!--                <h1>Navbar Fixed Top</h1>
+                                <b:jumbotron>
+                                    <h1>Navbar example</h1>
+                                    <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+                                    <p>To see the difference between static and fixed top navbars, just scroll.</p>
+                                    <p>
+                                        <a class="btn btn-lg btn-primary" href="second.xhtml" role="button"><span>View Navbars Documentation </span><span><i class="glyphicon glyphicon-chevron-right"></i></span></a>
+                                    </p>
+                                </b:jumbotron>
+                                <br/><br/>
+                                <b:button value="Default" />
+                                <b:button look="primary" value="Primary"/>
+                                <b:button look="info" value="Info"/>
+                                <b:button look="success" value="Success"/>
+                                <b:button look="warning" value="Warning"/>
+                                <b:button look="danger" value="Danger"/>-->
                 <br/><br/>
-                <b:button value="Default" />
-                <b:button look="primary" value="Primary"/>
-                <b:button look="info" value="Info"/>
-                <b:button look="success" value="Success"/>
-                <b:button look="warning" value="Warning"/>
-                <b:button look="danger" value="Danger"/>
-                <br/><br/>
-                <b:button iconAwesome="check" look="link" value="確定" />
-                <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="check" value="確定" 
-                          look="success" onclick="return false;" />
+                <b:button iconAwesome="check" look="primary" value="確定" />
                 <![CDATA[&nbsp;]]>
                 <b:button iconAwesome="close" value="取消" 
-                          look="warning" onclick="return false;" />
+                          look="primary" onclick="return false;" />
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="pencil" value="編輯" 
-                          look="info" onclick="return false;" />
+                <b:button iconAwesome="pencil" value="修改" 
+                          look="primary" onclick="return false;" />
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="trash" value="刪除" 
-                          look="danger" onclick="return false;" /> 
+                <b:button iconAwesome="trash-o" value="刪除" 
+                          look="primary" onclick="return false;" /> 
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="close" value="" 
+                <b:button iconAwesome="plus" look="primary" value="新增" 
                           onclick="return false;" />
                 <![CDATA[&nbsp;]]>
-                <b:button iconAwesome="close" icon-size="lg" value="" 
+                <b:button iconAwesome="search" look="primary" value="搜尋" 
                           onclick="return false;" />
-                <br/><br/>
-                <b:button icon-spin="true" iconAwesome="thumbs-down"
-                          value="Thumbs up or thumbs down?" onclick="return false;"
-                          look="info" title="spin='true'" />
-                <b:button icon-size="3x" iconAwesome="thumbs-up"
-                          value="even bigger thumbs up!" onclick="return false;"
-                          look="info" title="icon-size='3x'" />
-                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-pencil">
-                    <f:param name="testId" value="33" />
-                </b:button>
-                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-trash">
-                    <f:param name="testId" value="33" />
-                </b:button>
-                <br/><br/>
-                <b:row>
-                    <b:column medium-screen="1"></b:column>
-                    <b:column medium-screen="4">
-                        <b:dateTimePicker
-                            label="inline form"
-                            render-label="true"
-                            show-date="true"
-                            show-time="false"/>
-                    </b:column>
-                    <b:column medium-screen="7"></b:column>
-                </b:row>
-                <b:dataTable value="#{carPool.carPool}"
-                             var="car"
-                             class="editableCarTable">
-                    <b:dataTableColumn value="#{car.brand}" />
-                    <b:dataTableColumn value="#{car.type}" />
-                    <b:dataTableColumn value="#{car.color}" />
-                    <b:dataTableColumn value="#{car.year}"  order="asc" />
-                    <b:dataTableColumn label="Price">
-                        <b:inputText value="#{car.price}" rendered="#{car.editable}" />
-                        <h:outputText value="#{car.price}" rendered="#{!car.editable}" />
-                    </b:dataTableColumn>
-                    <b:dataTableColumn>
-                        <b:commandButton value="edit" icon="edit" ajax="true" update="@(.editableCarTable)"
-                                         onclick="ajax:car.edit()" >
-                        </b:commandButton>
-                    </b:dataTableColumn>
-                </b:dataTable>
-                <br/>
+                <![CDATA[&nbsp;]]>
+                <b:button iconAwesome="copy" look="primary" value="複製" 
+                          onclick="return false;" />
+                <![CDATA[&nbsp;]]>
+                <b:button iconAwesome="mouse-pointer" look="primary" value="選擇" 
+                          onclick="return false;" />
+                <![CDATA[&nbsp;]]>
+                <b:button iconAwesome="arrow-right" look="primary" value="移動" 
+                          onclick="return false;" />
+                <![CDATA[&nbsp;]]>
+                <b:button iconAwesome="upload" look="primary" value="上傳" 
+                          onclick="return false;" />
+                <!--                <br/><br/>
+                                <b:button icon-spin="true" iconAwesome="thumbs-down"
+                                          value="Thumbs up or thumbs down?" onclick="return false;"
+                                          look="info" title="spin='true'" />
+                                <b:button icon-size="3x" iconAwesome="thumbs-up"
+                                          value="even bigger thumbs up!" onclick="return false;"
+                                          look="info" title="icon-size='3x'" />
+                                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-pencil">
+                                    <f:param name="testId" value="33" />
+                                </b:button>
+                                <b:button outcome="testButton" value="" icon="glyphicon glyphicon-trash">
+                                    <f:param name="testId" value="33" />
+                                </b:button>
+                                <br/><br/>
+                                <b:row>
+                                    <b:column medium-screen="1"></b:column>
+                                    <b:column medium-screen="4">
+                                        <b:dateTimePicker
+                                            label="inline form"
+                                            render-label="true"
+                                            show-date="true"
+                                            show-time="false"/>
+                                    </b:column>
+                                    <b:column medium-screen="7"></b:column>
+                                </b:row>-->
 
-                <b:panelGrid columns="3">
-                    <p:outputLabel for="@next" value="Enter a number between 1 and 10"/>
-                    <b:inputText value="0" onkeyup="ajax:imageGallery.validateNumber()" update="@previous @next"
-                                 id="oneToTenId"/>
-                    <b:message for="@previous"/>
+                <br/><br/><br/>
+                <!--                <b:panelGrid columns="3">
+                                    <p:outputLabel for="@next" value="Enter a number between 1 and 10"/>
+                                    <b:inputText value="0" onkeyup="ajax:imageGallery.validateNumber()" update="@previous @next"
+                                                 id="oneToTenId"/>
+                                    <b:message for="@previous"/>
+                                </b:panelGrid>-->
+                <b:alert severity="success"><strong>Well done!</strong> You successfully read this important alert message.</b:alert>
+                <b:alert severity="danger"><strong>Oh snap!</strong> Change a few things up and try submitting again. </b:alert>
+                <b:alert severity="warning"><strong>Well done!</strong> You successfully read this important alert message.</b:alert>
+                <h3 style="margin-top:0">Basic</h3>
+                <p:tabView>
+                    <p:tab title="Godfather Part I">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage name="demo/images/godfather/godfather1.jpg" />
+                            <h:outputText
+                                value="The story begins as Don Vito Corleonethtfhdfhdfhrtdhgfrhrthrtfjtyjtnutrtnyujyhtghjkl;lkjhgfghjklo;iuiuyhtgfgbnm,;poiuytrfgjkloiuytfghjiuytf..." />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Godfather Part II">
+                        <h:panelGrid columns="1" cellpadding="10">
+                            <h:form>
+                                <p:fieldset legend="是非題" toggleable="true" toggleSpeed="500" style="width: 100%;">
+                                    <h:panelGrid columns="3" cellpadding="5" columnClasses="five-percent top-alignment, eighty-percent top-alignment, twenty-percent top-alignment" class="togglegrid">
+                                        <p:column >
+                                            <h:outputText value="1."></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <h:outputText value="「緊急求救」在平面圖上為何種顏色的圖示？"></h:outputText>
+                                            <br/>
+                                            <h:outputText value="答案 O"></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <b:button iconAwesome="pencil" value="編輯" 
+                                                      look="primary" onclick="return false;" />
+                                            <![CDATA[&nbsp;]]>
+                                            <b:button iconAwesome="trash" value="刪除" 
+                                                      look="primary" onclick="return false;" /> 
+                                        </p:column>
+                                    </h:panelGrid>
+                                </p:fieldset>
+                            </h:form>
+<!--                            <p:fieldset legend="Simple FieldSet"  style=" font-size: 12px;       
+                                        padding: 1em;float:left; ; margin-right:0.5em; padding-top:0.2em; text-align:left; 
+                                        border:1px solid green; font-weight:bold; width: 100%;">
+
+                            </p:fieldset>-->
+                            <h:form>
+                                <p:fieldset legend="選擇題" toggleable="true" toggleSpeed="500" style="width: 100%; table-layout: fixed;">
+                                    <h:panelGrid columns="3" cellpadding="5" columnClasses="five-percent top-alignment, eighty-percent top-alignment, twenty-percent top-alignment" class="togglegrid">
+                                        <p:column >
+                                            <h:outputText value="1."></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <h:outputText value="「緊急求救」在平面圖上為何種顏色的圖示？"></h:outputText>
+                                            <br/>
+                                            <h:outputText value="A紅色 B藍色 C灰色 D紫色"></h:outputText>
+                                            <br/>
+                                            <h:outputText value="答案"></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <b:button iconAwesome="pencil" value="編輯" 
+                                                      look="primary" onclick="return false;" />
+                                            <![CDATA[&nbsp;]]>
+                                            <b:button iconAwesome="trash" value="刪除" 
+                                                      look="primary" onclick="return false;" /> 
+                                        </p:column>
+                                    </h:panelGrid>
+                                    <h:panelGrid columns="3" cellpadding="5" columnClasses="five-percent top-alignment, eighty-percent top-alignment, twenty-percent top-alignment" class="togglegrid">
+                                        <p:column >
+                                            <h:outputText value="2."></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <h:outputText value="「緊急求救」在平面圖上為何種顏色的圖示？"></h:outputText>
+                                            <br/>
+                                            <h:outputText value="A紅色 B藍色 C灰色 D紫色"></h:outputText>
+                                            <br/>
+                                            <h:outputText value="答案"></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <b:button iconAwesome="pencil" value="編輯" 
+                                                      look="primary" onclick="return false;" />
+                                            <![CDATA[&nbsp;]]>
+                                            <b:button iconAwesome="trash" value="刪除" 
+                                                      look="primary" onclick="return false;" /> 
+                                        </p:column>
+                                    </h:panelGrid>
+                                    <h:panelGrid columns="3" cellpadding="5" columnClasses="five-percent top-alignment, eighty-percent top-alignment, twenty-percent top-alignment" class="togglegrid">
+                                        <p:column >
+                                            <h:outputText value="2."></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                            <br/>
+                                            <h:outputText value="  "></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <h:outputText value="「緊急求救」在平面圖上為何種顏色的圖示？"></h:outputText>
+                                            <br/>
+                                            <h:outputText value="A紅色 B藍色 C灰色 D紫色"></h:outputText>
+                                            <br/>
+                                            <h:outputText value="答案"></h:outputText>
+                                        </p:column>
+                                        <p:column >
+                                            <b:button iconAwesome="pencil" value="編輯" 
+                                                      look="primary" onclick="return false;" />
+                                            <![CDATA[&nbsp;]]>
+                                            <b:button iconAwesome="trash" value="刪除" 
+                                                      look="primary" onclick="return false;" /> 
+                                        </p:column>
+                                    </h:panelGrid>
+
+                                </p:fieldset>
+                            </h:form>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Godfather Part III">
+                        <h:panelGrid columns="2" cellpadding="10">
+                            <p:graphicImage name="demo/images/godfather/godfather3.jpg" />
+                            <h:outputText value="After a break of more than 15 years..." />
+                        </h:panelGrid>
+                    </p:tab>
+                </p:tabView>
+                <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                <!--<i class="fa fa-file fa-5x" aria-hidden="true"></i>-->
+                <!--<i class="fa fa-folder-o fa-5x" aria-hidden="true"></i>-->
+                <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                <br/><br/><br/>
+                <!--<i class="fa fa-file-o fa-4x" aria-hidden="true"></i>-->
+                <!--<i class="fa fa-file fa-4x" aria-hidden="true"></i>-->
+                <!--<i class="fa fa-folder-o fa-4x" aria-hidden="true"></i>-->
+                <!--<i class="fa fa-folder fa-4x" aria-hidden="true"></i>-->
+                <b:panelGrid colSpans="3, 3, 3 ,3" size="md">
+                    <h:outputFormat style="text-align: center;">
+                        <div style="align-content: center;">
+                            <i class="fa fa-folder fa-5x"></i>
+                        </div>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <picture>
+                            <!--                            <source media="(max-width: 750px)"
+                                                                class="fa fa-folder fa-5x,fa fa-folder fa-4x,fa fa-folder fa-3x"/>-->
+                            <i class="fa fa-folder fa-5x"/>
+                        </picture>
+                        <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <div style="align-content: center;">
+                            <h:outputLabel value="科目"/>
+                        </div>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <h:outputLabel value="科目"/>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <h:outputLabel value="科目"/>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <h:outputLabel value="科目"/>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="單元"/>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="單元"/>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="單元"/>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="單元"/>
+                    </h:outputFormat>
+                    <!--                    <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                                        <h:outputLabel value="Value 1" />
+                                        <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                                        <h:outputLabel value="Value 2" />
+                                        <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                                        <i class="fa fa-folder fa-5x" aria-hidden="true"></i>
+                                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                                        <h:outputLabel value="Checkbox 1" />
+                                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                                        <h:outputLabel value="Checkbox 2" />
+                                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>
+                                        <i class="fa fa-file-o fa-5x" aria-hidden="true"></i>-->
                 </b:panelGrid>
-                <h:form>
-                    <p:fieldset legend="Toggleable" toggleable="true" toggleSpeed="500">
-                        <h:panelGrid columns="2" cellpadding="5" style="margin-top: 20px; margin-bottom: 20px;">
-                            <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                            <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream.
-                                          In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy,
-                                          killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows."></h:outputText>
-                        </h:panelGrid>
-                        <h:panelGrid columns="2" cellpadding="5"  style="margin-top: 20px; margin-bottom: 20px;">
-                            <p:graphicImage name="demo/images/godfather/godfather2.jpg" />
-                            <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream.
-                                          In the early 1900s, the child Vito flees his Sicilian village for America after the local Mafia kills his family. Vito struggles to make a living, legally or illegally, for his wife and growing brood in Little Italy,
-                                          killing the local Black Hand Fanucci after he demands his customary cut of the tyro's business. With Fanucci gone, Vito's communal stature grows."></h:outputText>
-                        </h:panelGrid>
-                    </p:fieldset>
-                </h:form>
+                <br/><br/><br/>
+                <b:panelGrid colSpans="3, 3, 3 ,3" size="md">
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-users fa-5x"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="組織"/>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <h:outputLabel value="組織"/>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <h:outputLabel value="組織"/>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <h:outputLabel value="組織"/>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-user fa-5x"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat style="text-align: center;">
+                        <i class="fa fa-user fa-5x" aria-hidden="true"></i>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="使用者"/>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="使用者"/>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="使用者"/>
+                    </h:outputFormat>
+                    <h:outputFormat>
+                        <h:outputLabel value="使用者"/>
+                    </h:outputFormat>
+                </b:panelGrid>
             </ui:define>
         </ui:composition>
     </h:body>
